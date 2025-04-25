@@ -1,0 +1,550 @@
+{
+  "vertices" : [ {
+    "id" : "zone0:ron.mcglynn",
+    "type" : "user"
+  }, {
+    "id" : "zone0:ossie.goldner",
+    "type" : "user"
+  }, {
+    "id" : "zone0:vance.beer",
+    "type" : "user"
+  }, {
+    "id" : "zone0:genevive.huel",
+    "type" : "user"
+  }, {
+    "id" : "zone0:theo.schmitt",
+    "type" : "user"
+  }, {
+    "id" : "zone0:august.dickinson",
+    "type" : "user"
+  }, {
+    "id" : "zone0:aracelis.little",
+    "type" : "user"
+  }, {
+    "id" : "zone0:Bryant Divide",
+    "type" : "space"
+  }, {
+    "id" : "zone0:lia.conn",
+    "type" : "user"
+  }, {
+    "id" : "zone0:drema.ziemann",
+    "type" : "user"
+  }, {
+    "id" : "zone0:erlene.christiansen",
+    "type" : "user"
+  }, {
+    "id" : "zone0:chi.kuhic",
+    "type" : "user"
+  }, {
+    "id" : "zone0:timothy.nienow",
+    "type" : "user"
+  }, {
+    "id" : "zone0:erasmo.nolan",
+    "type" : "user"
+  }, {
+    "id" : "zone0:demetrice.denesik",
+    "type" : "user"
+  }, {
+    "id" : "zone0:hans.renner",
+    "type" : "user"
+  }, {
+    "id" : "zone0:allen.spinka",
+    "type" : "user"
+  }, {
+    "id" : "zone0:daron.sporer",
+    "type" : "user"
+  }, {
+    "id" : "zone0:sydney.lang",
+    "type" : "user"
+  }, {
+    "id" : "zone0:jerald.becker",
+    "type" : "user"
+  }, {
+    "id" : "zone0:kellie.abbott",
+    "type" : "user"
+  }, {
+    "id" : "zone0:nickolas.kertzmann",
+    "type" : "user"
+  }, {
+    "id" : "zone0:tifany.wunsch",
+    "type" : "user"
+  }, {
+    "id" : "zone0:qui_voluptas",
+    "type" : "group"
+  }, {
+    "id" : "zone0:fredrick.nicolas",
+    "type" : "user"
+  }, {
+    "id" : "zone0:est_sint",
+    "type" : "group"
+  }, {
+    "id" : "zone0:leslee.orn",
+    "type" : "user"
+  }, {
+    "id" : "zone0:benito.prosacco",
+    "type" : "user"
+  }, {
+    "id" : "zone0:voluptas_facere",
+    "type" : "group"
+  }, {
+    "id" : "zone0:eustolia.emard",
+    "type" : "user"
+  }, {
+    "id" : "zone0:cordia.hudson",
+    "type" : "user"
+  }, {
+    "id" : "zone0:labore_esse",
+    "type" : "group"
+  }, {
+    "id" : "zone0:margie.abernathy",
+    "type" : "user"
+  }, {
+    "id" : "zone0:zachariah.crist",
+    "type" : "user"
+  }, {
+    "id" : "zone0:lavonna.bashirian",
+    "type" : "user"
+  }, {
+    "id" : "zone0:etta.dach",
+    "type" : "user"
+  }, {
+    "id" : "zone0:cruz.mckenzie",
+    "type" : "user"
+  }, {
+    "id" : "zone0:marlys.parker",
+    "type" : "user"
+  }, {
+    "id" : "zone0:hortensia.robel",
+    "type" : "user"
+  }, {
+    "id" : "zone0:steve.spinka",
+    "type" : "user"
+  }, {
+    "id" : "zone0:kris.west",
+    "type" : "user"
+  }, {
+    "id" : "zone0:ronny.mayer",
+    "type" : "user"
+  }, {
+    "id" : "zone0:royal.langosh",
+    "type" : "user"
+  }, {
+    "id" : "zone0:Leschport",
+    "type" : "provider"
+  }, {
+    "id" : "zone0:yuki.pacocha",
+    "type" : "user"
+  }, {
+    "id" : "zone0:nakia.becker",
+    "type" : "user"
+  }, {
+    "id" : "zone0:lenore.rowe",
+    "type" : "user"
+  }, {
+    "id" : "zone0:merlene.jacobson",
+    "type" : "user"
+  }, {
+    "id" : "zone0:patsy.wintheiser",
+    "type" : "user"
+  }, {
+    "id" : "zone0:nikole.gutkowski",
+    "type" : "user"
+  }, {
+    "id" : "zone0:carson.boyer",
+    "type" : "user"
+  }, {
+    "id" : "zone0:landon.grant",
+    "type" : "user"
+  }, {
+    "id" : "zone0:bryon.upton",
+    "type" : "user"
+  }, {
+    "id" : "zone0:maxime_aut",
+    "type" : "group"
+  }, {
+    "id" : "zone0:ben.huels",
+    "type" : "user"
+  }, {
+    "id" : "zone0:daryl.marvin",
+    "type" : "user"
+  }, {
+    "id" : "zone0:damien.johnson",
+    "type" : "user"
+  }, {
+    "id" : "zone0:rod.white",
+    "type" : "user"
+  }, {
+    "id" : "zone0:brooks.grant",
+    "type" : "user"
+  }, {
+    "id" : "zone0:katina.kohler",
+    "type" : "user"
+  }, {
+    "id" : "zone0:aline.hintz",
+    "type" : "user"
+  }, {
+    "id" : "zone0:maude.reynolds",
+    "type" : "user"
+  }, {
+    "id" : "zone0:mozell.batz",
+    "type" : "user"
+  }, {
+    "id" : "zone0:magdalene.hills",
+    "type" : "user"
+  }, {
+    "id" : "zone0:harold.gutmann",
+    "type" : "user"
+  }, {
+    "id" : "zone0:Gerald Street",
+    "type" : "space"
+  }, {
+    "id" : "zone0:consequatur_nisi",
+    "type" : "group"
+  }, {
+    "id" : "zone0:caleb.effertz",
+    "type" : "user"
+  }, {
+    "id" : "zone0:katheleen.morissette",
+    "type" : "user"
+  }, {
+    "id" : "zone0:denny.flatley",
+    "type" : "user"
+  }, {
+    "id" : "zone0:candelaria.nikolaus",
+    "type" : "user"
+  }, {
+    "id" : "zone0:calvin.gusikowski",
+    "type" : "user"
+  }, {
+    "id" : "zone0:collen.mcclure",
+    "type" : "user"
+  }, {
+    "id" : "zone0:devin.wolf",
+    "type" : "user"
+  } ],
+  "edges" : [ {
+    "src" : "zone0:vance.beer",
+    "dst" : "zone0:Bryant Divide",
+    "perms" : "00100"
+  }, {
+    "src" : "zone0:landon.grant",
+    "dst" : "zone0:Bryant Divide",
+    "perms" : "00010"
+  }, {
+    "src" : "zone0:damien.johnson",
+    "dst" : "zone0:qui_voluptas",
+    "perms" : "11110"
+  }, {
+    "src" : "zone0:ron.mcglynn",
+    "dst" : "zone0:maxime_aut",
+    "perms" : "11111"
+  }, {
+    "src" : "zone0:katheleen.morissette",
+    "dst" : "zone0:voluptas_facere",
+    "perms" : "10000"
+  }, {
+    "src" : "zone0:timothy.nienow",
+    "dst" : "zone0:Bryant Divide",
+    "perms" : "01011"
+  }, {
+    "src" : "zone0:collen.mcclure",
+    "dst" : "zone0:Bryant Divide",
+    "perms" : "01111"
+  }, {
+    "src" : "zone0:nickolas.kertzmann",
+    "dst" : "zone0:voluptas_facere",
+    "perms" : "01101"
+  }, {
+    "src" : "zone0:demetrice.denesik",
+    "dst" : "zone0:maxime_aut",
+    "perms" : "00100"
+  }, {
+    "src" : "zone0:lia.conn",
+    "dst" : "zone0:Gerald Street",
+    "perms" : "00110"
+  }, {
+    "src" : "zone0:Bryant Divide",
+    "dst" : "zone0:Leschport",
+    "perms" : "00111"
+  }, {
+    "src" : "zone0:maude.reynolds",
+    "dst" : "zone0:maxime_aut",
+    "perms" : "01000"
+  }, {
+    "src" : "zone0:erasmo.nolan",
+    "dst" : "zone0:consequatur_nisi",
+    "perms" : "11100"
+  }, {
+    "src" : "zone0:calvin.gusikowski",
+    "dst" : "zone0:labore_esse",
+    "perms" : "00010"
+  }, {
+    "src" : "zone0:merlene.jacobson",
+    "dst" : "zone0:qui_voluptas",
+    "perms" : "01000"
+  }, {
+    "src" : "zone0:lavonna.bashirian",
+    "dst" : "zone0:qui_voluptas",
+    "perms" : "00110"
+  }, {
+    "src" : "zone0:genevive.huel",
+    "dst" : "zone0:consequatur_nisi",
+    "perms" : "11011"
+  }, {
+    "src" : "zone0:carson.boyer",
+    "dst" : "zone0:voluptas_facere",
+    "perms" : "10010"
+  }, {
+    "src" : "zone0:chi.kuhic",
+    "dst" : "zone0:Bryant Divide",
+    "perms" : "10000"
+  }, {
+    "src" : "zone0:kris.west",
+    "dst" : "zone0:Bryant Divide",
+    "perms" : "11111"
+  }, {
+    "src" : "zone0:fredrick.nicolas",
+    "dst" : "zone0:Bryant Divide",
+    "perms" : "00011"
+  }, {
+    "src" : "zone0:rod.white",
+    "dst" : "zone0:Gerald Street",
+    "perms" : "11100"
+  }, {
+    "src" : "zone0:voluptas_facere",
+    "dst" : "zone0:qui_voluptas",
+    "perms" : "11101"
+  }, {
+    "src" : "zone0:cordia.hudson",
+    "dst" : "zone0:Bryant Divide",
+    "perms" : "00101"
+  }, {
+    "src" : "zone0:leslee.orn",
+    "dst" : "zone0:Bryant Divide",
+    "perms" : "10101"
+  }, {
+    "src" : "zone0:august.dickinson",
+    "dst" : "zone0:voluptas_facere",
+    "perms" : "00001"
+  }, {
+    "src" : "zone0:consequatur_nisi",
+    "dst" : "zone0:qui_voluptas",
+    "perms" : "11100"
+  }, {
+    "src" : "zone0:carson.boyer",
+    "dst" : "zone0:maxime_aut",
+    "perms" : "11011"
+  }, {
+    "src" : "zone0:labore_esse",
+    "dst" : "zone0:qui_voluptas",
+    "perms" : "11110"
+  }, {
+    "src" : "zone0:zachariah.crist",
+    "dst" : "zone0:maxime_aut",
+    "perms" : "10100"
+  }, {
+    "src" : "zone0:theo.schmitt",
+    "dst" : "zone0:qui_voluptas",
+    "perms" : "11011"
+  }, {
+    "src" : "zone0:nikole.gutkowski",
+    "dst" : "zone0:Bryant Divide",
+    "perms" : "10110"
+  }, {
+    "src" : "zone0:daron.sporer",
+    "dst" : "zone0:Bryant Divide",
+    "perms" : "11100"
+  }, {
+    "src" : "zone0:mozell.batz",
+    "dst" : "zone0:voluptas_facere",
+    "perms" : "00101"
+  }, {
+    "src" : "zone0:Gerald Street",
+    "dst" : "zone0:Leschport",
+    "perms" : "11111"
+  }, {
+    "src" : "zone0:katina.kohler",
+    "dst" : "zone0:labore_esse",
+    "perms" : "00101"
+  }, {
+    "src" : "zone0:katheleen.morissette",
+    "dst" : "zone0:Gerald Street",
+    "perms" : "01001"
+  }, {
+    "src" : "zone0:etta.dach",
+    "dst" : "zone0:labore_esse",
+    "perms" : "10011"
+  }, {
+    "src" : "zone0:patsy.wintheiser",
+    "dst" : "zone0:voluptas_facere",
+    "perms" : "10010"
+  }, {
+    "src" : "zone0:sydney.lang",
+    "dst" : "zone0:Bryant Divide",
+    "perms" : "10111"
+  }, {
+    "src" : "zone0:bryon.upton",
+    "dst" : "zone0:Gerald Street",
+    "perms" : "00011"
+  }, {
+    "src" : "zone0:nakia.becker",
+    "dst" : "zone0:maxime_aut",
+    "perms" : "11101"
+  }, {
+    "src" : "zone0:benito.prosacco",
+    "dst" : "zone0:qui_voluptas",
+    "perms" : "00110"
+  }, {
+    "src" : "zone0:aline.hintz",
+    "dst" : "zone0:consequatur_nisi",
+    "perms" : "10111"
+  }, {
+    "src" : "zone0:maxime_aut",
+    "dst" : "zone0:Bryant Divide",
+    "perms" : "00111"
+  }, {
+    "src" : "zone0:tifany.wunsch",
+    "dst" : "zone0:voluptas_facere",
+    "perms" : "01111"
+  }, {
+    "src" : "zone0:brooks.grant",
+    "dst" : "zone0:maxime_aut",
+    "perms" : "10001"
+  }, {
+    "src" : "zone0:lenore.rowe",
+    "dst" : "zone0:qui_voluptas",
+    "perms" : "11001"
+  }, {
+    "src" : "zone0:denny.flatley",
+    "dst" : "zone0:consequatur_nisi",
+    "perms" : "10001"
+  }, {
+    "src" : "zone0:ben.huels",
+    "dst" : "zone0:qui_voluptas",
+    "perms" : "00011"
+  }, {
+    "src" : "zone0:marlys.parker",
+    "dst" : "zone0:qui_voluptas",
+    "perms" : "00001"
+  }, {
+    "src" : "zone0:cruz.mckenzie",
+    "dst" : "zone0:Bryant Divide",
+    "perms" : "11011"
+  }, {
+    "src" : "zone0:yuki.pacocha",
+    "dst" : "zone0:qui_voluptas",
+    "perms" : "10111"
+  }, {
+    "src" : "zone0:aracelis.little",
+    "dst" : "zone0:Bryant Divide",
+    "perms" : "11010"
+  }, {
+    "src" : "zone0:jerald.becker",
+    "dst" : "zone0:voluptas_facere",
+    "perms" : "01001"
+  }, {
+    "src" : "zone0:harold.gutmann",
+    "dst" : "zone0:labore_esse",
+    "perms" : "00011"
+  }, {
+    "src" : "zone0:erlene.christiansen",
+    "dst" : "zone0:labore_esse",
+    "perms" : "01101"
+  }, {
+    "src" : "zone0:allen.spinka",
+    "dst" : "zone0:qui_voluptas",
+    "perms" : "01001"
+  }, {
+    "src" : "zone0:steve.spinka",
+    "dst" : "zone0:Gerald Street",
+    "perms" : "00010"
+  }, {
+    "src" : "zone0:est_sint",
+    "dst" : "zone0:Gerald Street",
+    "perms" : "11010"
+  }, {
+    "src" : "zone0:merlene.jacobson",
+    "dst" : "zone0:Bryant Divide",
+    "perms" : "11001"
+  }, {
+    "src" : "zone0:ossie.goldner",
+    "dst" : "zone0:voluptas_facere",
+    "perms" : "10100"
+  }, {
+    "src" : "zone0:devin.wolf",
+    "dst" : "zone0:consequatur_nisi",
+    "perms" : "11011"
+  }, {
+    "src" : "zone0:lavonna.bashirian",
+    "dst" : "zone0:voluptas_facere",
+    "perms" : "11101"
+  }, {
+    "src" : "zone0:magdalene.hills",
+    "dst" : "zone0:maxime_aut",
+    "perms" : "00000"
+  }, {
+    "src" : "zone0:eustolia.emard",
+    "dst" : "zone0:Bryant Divide",
+    "perms" : "01100"
+  }, {
+    "src" : "zone0:hortensia.robel",
+    "dst" : "zone0:maxime_aut",
+    "perms" : "00000"
+  }, {
+    "src" : "zone0:margie.abernathy",
+    "dst" : "zone0:Gerald Street",
+    "perms" : "10101"
+  }, {
+    "src" : "zone0:nikole.gutkowski",
+    "dst" : "zone0:qui_voluptas",
+    "perms" : "10010"
+  }, {
+    "src" : "zone0:hans.renner",
+    "dst" : "zone0:qui_voluptas",
+    "perms" : "01010"
+  }, {
+    "src" : "zone0:drema.ziemann",
+    "dst" : "zone0:voluptas_facere",
+    "perms" : "11000"
+  }, {
+    "src" : "zone0:daryl.marvin",
+    "dst" : "zone0:consequatur_nisi",
+    "perms" : "01111"
+  }, {
+    "src" : "zone0:ronny.mayer",
+    "dst" : "zone0:qui_voluptas",
+    "perms" : "01100"
+  }, {
+    "src" : "zone0:aracelis.little",
+    "dst" : "zone0:voluptas_facere",
+    "perms" : "11000"
+  }, {
+    "src" : "zone0:caleb.effertz",
+    "dst" : "zone0:labore_esse",
+    "perms" : "10011"
+  }, {
+    "src" : "zone0:qui_voluptas",
+    "dst" : "zone0:Gerald Street",
+    "perms" : "00001"
+  }, {
+    "src" : "zone0:candelaria.nikolaus",
+    "dst" : "zone0:consequatur_nisi",
+    "perms" : "10110"
+  }, {
+    "src" : "zone0:landon.grant",
+    "dst" : "zone0:maxime_aut",
+    "perms" : "00111"
+  }, {
+    "src" : "zone0:kellie.abbott",
+    "dst" : "zone0:Gerald Street",
+    "perms" : "11111"
+  }, {
+    "src" : "zone0:calvin.gusikowski",
+    "dst" : "zone0:maxime_aut",
+    "perms" : "00001"
+  }, {
+    "src" : "zone0:royal.langosh",
+    "dst" : "zone0:labore_esse",
+    "perms" : "01011"
+  } ]
+}

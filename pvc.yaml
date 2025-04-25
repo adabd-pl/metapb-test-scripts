@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: caliper-workspace-pv
+  namespace: fabric
+spec:
+  capacity:
+    storage: 5Gi  # Określasz rozmiar przestrzeni, np. 5 GB
+  accessModes:
+    - ReadWriteOnce  # Wolumin będzie dostępny tylko do odczytu i zapisu z jednego węzła
+  persistentVolumeReclaimPolicy: Retain  # Wolumin nie będzie usuwany po usunięciu PVC
+  storageClassName: manual  # Klasa dysku, można dostosować w zależności od środowiska
+  hostPath:
+    path: C:/Users/adabo/Downloads/generated_graphs  # Ścieżka lokalna na hoście
+    type: Directory  # Określa typ woluminu, w tym przypadku katalog
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: caliper-workspace-pvc
+  namespace: fabric
+spec:
+  accessModes:
+    - ReadWriteOnce  # Określa dostępność tylko do odczytu i zapisu przez jeden węzeł
+  resources:
+    requests:
+      storage: 5Gi  # Określasz wymagany rozmiar dla tego PVC
+  volumeMode: Filesystem
+  storageClassName: manual  # Klasa dysku, może być dostosowana w zależności od Twoich potrzeb

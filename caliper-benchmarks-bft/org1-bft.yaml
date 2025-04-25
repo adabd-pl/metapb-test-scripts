@@ -1,0 +1,590 @@
+name: hlf-network
+version: 1.0.0
+client:
+  organization: ""
+organizations:
+
+  OrdererMSP:
+    mspid: OrdererMSP
+    cryptoPath: /tmp/cryptopath
+    users: {}
+    peers: []
+    orderers:
+      - ord-bft-node1.fabric
+      - ord-bft-node2.fabric
+      - ord-bft-node3.fabric
+      - ord-bft-node4.fabric
+      - ord-node1.fabric
+      - ord-node2.fabric
+      - ord-node3.fabric
+      - ord-node4.fabric
+  Org1MSP:
+    mspid: Org1MSP
+    cryptoPath: /tmp/cryptopath
+    users:
+      org1-admin-fabric:
+        cert:
+          pem: |
+            -----BEGIN CERTIFICATE-----
+            MIICUjCCAfmgAwIBAgIUZq4sr7YheW8q7W23Lmad6oIS77YwCgYIKoZIzj0EAwIw
+            ajELMAkGA1UEBhMCRVMxETAPBgNVBAcTCEFsaWNhbnRlMREwDwYDVQQJEwhBbGlj
+            YW50ZTEZMBcGA1UEChMQS3VuZyBGdSBTb2Z0d2FyZTENMAsGA1UECxMEVGVjaDEL
+            MAkGA1UEAxMCY2EwHhcNMjUwMzEwMTM1MTE0WhcNMjYwMzExMTgzMzAwWjAgMQ4w
+            DAYDVQQLEwVhZG1pbjEOMAwGA1UEAxMFYWRtaW4wWTATBgcqhkjOPQIBBggqhkjO
+            PQMBBwNCAAQyJfcQh8dOYhFm7QK5dlIJ8HZ4mzMFHhvEs9nxHvXETHz9krCV/zNb
+            d50m4gG5NutbOFuH+QT5H4HDlNFxDw1Fo4HGMIHDMA4GA1UdDwEB/wQEAwIHgDAM
+            BgNVHRMBAf8EAjAAMB0GA1UdDgQWBBRHJduCJu2h0J/+ZNIBQb/GqEhPLjArBgNV
+            HSMEJDAigCDB0DD1BfadSaFEhmYbOBFDXfam4JHsPsW/Fd1DOMIq6zBXBggqAwQF
+            BgcIAQRLeyJhdHRycyI6eyJoZi5BZmZpbGlhdGlvbiI6IiIsImhmLkVucm9sbG1l
+            bnRJRCI6ImFkbWluIiwiaGYuVHlwZSI6ImFkbWluIn19MAoGCCqGSM49BAMCA0cA
+            MEQCIBc1sV9+8FBY/6RG/DxNBOGOQW9b2ZRF7oGw2htz+0VaAiBQm9EMxHujT3Sa
+            ff8HhNr3VCAq1cV+WX//gi5lWGgeXQ==
+            -----END CERTIFICATE-----
+
+        key:
+          pem: |
+            -----BEGIN PRIVATE KEY-----
+            MIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQg0EfrKdSZ/nT+3CyM
+            dt70hEjZSPh7VDCQUY9TGJcaESKhRANCAAQyJfcQh8dOYhFm7QK5dlIJ8HZ4mzMF
+            HhvEs9nxHvXETHz9krCV/zNbd50m4gG5NutbOFuH+QT5H4HDlNFxDw1F
+            -----END PRIVATE KEY-----
+
+    peers:
+      - org1-peer0.fabric
+    orderers: []
+
+orderers:
+  ord-bft-node1.fabric:
+
+    url: grpcs://10.87.23.33:31200
+
+
+    adminUrl: https://10.87.23.33:31846
+    adminTlsCert: |
+        -----BEGIN CERTIFICATE-----
+        MIICxjCCAmygAwIBAgIUewK01NPztJ1db0YhmkxhXWVYkD8wCgYIKoZIzj0EAwIw
+        bTELMAkGA1UEBhMCRVMxETAPBgNVBAcTCEFsaWNhbnRlMREwDwYDVQQJEwhBbGlj
+        YW50ZTEZMBcGA1UEChMQS3VuZyBGdSBTb2Z0d2FyZTENMAsGA1UECxMEVGVjaDEO
+        MAwGA1UEAxMFdGxzY2EwHhcNMjUwMzEwMTc1NzE4WhcNMjYwMzE3MTYyMzAwWjAk
+        MRAwDgYDVQQLEwdvcmRlcmVyMRAwDgYDVQQDEwdvcmRlcmVyMFkwEwYHKoZIzj0C
+        AQYIKoZIzj0DAQcDQgAEaFjBN0BIPmBoqpWFndw33iCm+vBoefKpZeHn0jNy7tKV
+        jzfsxYEcmol6pJ/jIgFtYJcCqFNfoCW9vtHF3cfzlaOCATEwggEtMA4GA1UdDwEB
+        /wQEAwIDqDAdBgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwDAYDVR0TAQH/
+        BAIwADAdBgNVHQ4EFgQUxxECJbaJELxJbumNMfm18DYfraQwKwYDVR0jBCQwIoAg
+        nVeXCnLR5WDFFz+uOLErc7voqv+Z2b2gkF2LrWr/4vAwRQYDVR0RBD4wPIIJbG9j
+        YWxob3N0gg1vcmQtYmZ0LW5vZGUxghRvcmQtYmZ0LW5vZGUxLmZhYnJpY4cEfwAA
+        AYcEClcXITBbBggqAwQFBgcIAQRPeyJhdHRycyI6eyJoZi5BZmZpbGlhdGlvbiI6
+        IiIsImhmLkVucm9sbG1lbnRJRCI6Im9yZGVyZXIiLCJoZi5UeXBlIjoib3JkZXJl
+        ciJ9fTAKBggqhkjOPQQDAgNIADBFAiEAwFkYjiK3KjCcb/nfvYTBfqtXsn9K7cIV
+        NoJX33PJv6ACIHQ/8degw0QBBpRMam2aptEgjY66ZmYafo7BkuX2SYHy
+        -----END CERTIFICATE-----
+
+
+    grpcOptions:
+      allow-insecure: false
+    tlsCACerts:
+      pem: |
+        -----BEGIN CERTIFICATE-----
+        MIICRDCCAeugAwIBAgIQZYq5pnkeR2bWR7KmtWYzOTAKBggqhkjOPQQDAjBtMQsw
+        CQYDVQQGEwJFUzERMA8GA1UEBxMIQWxpY2FudGUxETAPBgNVBAkTCEFsaWNhbnRl
+        MRkwFwYDVQQKExBLdW5nIEZ1IFNvZnR3YXJlMQ0wCwYDVQQLEwRUZWNoMQ4wDAYD
+        VQQDEwV0bHNjYTAeFw0yNTAzMTAxNzU3MThaFw0zNTAzMTExNzU3MThaMG0xCzAJ
+        BgNVBAYTAkVTMREwDwYDVQQHEwhBbGljYW50ZTERMA8GA1UECRMIQWxpY2FudGUx
+        GTAXBgNVBAoTEEt1bmcgRnUgU29mdHdhcmUxDTALBgNVBAsTBFRlY2gxDjAMBgNV
+        BAMTBXRsc2NhMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEFHcOTYgcTfxFLN7T
+        K6vXxXJxCxbd9H/fuFEeYl+mYcMNKKGYXhVWJY/DkmgQLZE8IycCrUrq/Ev3zfKF
+        B/X0BqNtMGswDgYDVR0PAQH/BAQDAgGmMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggr
+        BgEFBQcDATAPBgNVHRMBAf8EBTADAQH/MCkGA1UdDgQiBCCdV5cKctHlYMUXP644
+        sStzu+iq/5nZvaCQXYutav/i8DAKBggqhkjOPQQDAgNHADBEAiA13EDmbr32A84P
+        hUBlRhwEgx/gmGlAXExU5eFqfA3w1wIgW9TiQNEZR0VTxdz9mOAFG24xben9R/xv
+        5S0EpcI7YCo=
+        -----END CERTIFICATE-----
+
+  ord-bft-node2.fabric:
+
+    url: grpcs://10.87.23.33:31248
+
+
+    adminUrl: https://10.87.23.33:30878
+    adminTlsCert: |
+        -----BEGIN CERTIFICATE-----
+        MIICxjCCAmygAwIBAgIUXNAnko1krYVXEoiqIZ110CjaM9gwCgYIKoZIzj0EAwIw
+        bTELMAkGA1UEBhMCRVMxETAPBgNVBAcTCEFsaWNhbnRlMREwDwYDVQQJEwhBbGlj
+        YW50ZTEZMBcGA1UEChMQS3VuZyBGdSBTb2Z0d2FyZTENMAsGA1UECxMEVGVjaDEO
+        MAwGA1UEAxMFdGxzY2EwHhcNMjUwMzEwMTc1NzE4WhcNMjYwMzE3MTYyMzAwWjAk
+        MRAwDgYDVQQLEwdvcmRlcmVyMRAwDgYDVQQDEwdvcmRlcmVyMFkwEwYHKoZIzj0C
+        AQYIKoZIzj0DAQcDQgAE4/JWUkPr+pEzUcZBBjfTnymu4UbrDqVl3vh5DYPUdBsY
+        +qtFYPmibdXzEXJXLc1TrY4FsDeG4P/NEMZ7/yPVRKOCATEwggEtMA4GA1UdDwEB
+        /wQEAwIDqDAdBgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwDAYDVR0TAQH/
+        BAIwADAdBgNVHQ4EFgQUEAKQ0LYnGv2YmVQp1Br5X1BkQXkwKwYDVR0jBCQwIoAg
+        nVeXCnLR5WDFFz+uOLErc7voqv+Z2b2gkF2LrWr/4vAwRQYDVR0RBD4wPIIJbG9j
+        YWxob3N0gg1vcmQtYmZ0LW5vZGUyghRvcmQtYmZ0LW5vZGUyLmZhYnJpY4cEfwAA
+        AYcEClcXITBbBggqAwQFBgcIAQRPeyJhdHRycyI6eyJoZi5BZmZpbGlhdGlvbiI6
+        IiIsImhmLkVucm9sbG1lbnRJRCI6Im9yZGVyZXIiLCJoZi5UeXBlIjoib3JkZXJl
+        ciJ9fTAKBggqhkjOPQQDAgNIADBFAiEA1EqeFm+8eUCB63kBpj32t8D5unaMydfE
+        hAavagkWOuYCIBM/B7tZEVZfXENM7ZHb55K37xZsEfqwpCPoJoS1gBV8
+        -----END CERTIFICATE-----
+
+
+    grpcOptions:
+      allow-insecure: false
+    tlsCACerts:
+      pem: |
+        -----BEGIN CERTIFICATE-----
+        MIICRDCCAeugAwIBAgIQZYq5pnkeR2bWR7KmtWYzOTAKBggqhkjOPQQDAjBtMQsw
+        CQYDVQQGEwJFUzERMA8GA1UEBxMIQWxpY2FudGUxETAPBgNVBAkTCEFsaWNhbnRl
+        MRkwFwYDVQQKExBLdW5nIEZ1IFNvZnR3YXJlMQ0wCwYDVQQLEwRUZWNoMQ4wDAYD
+        VQQDEwV0bHNjYTAeFw0yNTAzMTAxNzU3MThaFw0zNTAzMTExNzU3MThaMG0xCzAJ
+        BgNVBAYTAkVTMREwDwYDVQQHEwhBbGljYW50ZTERMA8GA1UECRMIQWxpY2FudGUx
+        GTAXBgNVBAoTEEt1bmcgRnUgU29mdHdhcmUxDTALBgNVBAsTBFRlY2gxDjAMBgNV
+        BAMTBXRsc2NhMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEFHcOTYgcTfxFLN7T
+        K6vXxXJxCxbd9H/fuFEeYl+mYcMNKKGYXhVWJY/DkmgQLZE8IycCrUrq/Ev3zfKF
+        B/X0BqNtMGswDgYDVR0PAQH/BAQDAgGmMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggr
+        BgEFBQcDATAPBgNVHRMBAf8EBTADAQH/MCkGA1UdDgQiBCCdV5cKctHlYMUXP644
+        sStzu+iq/5nZvaCQXYutav/i8DAKBggqhkjOPQQDAgNHADBEAiA13EDmbr32A84P
+        hUBlRhwEgx/gmGlAXExU5eFqfA3w1wIgW9TiQNEZR0VTxdz9mOAFG24xben9R/xv
+        5S0EpcI7YCo=
+        -----END CERTIFICATE-----
+
+  ord-bft-node3.fabric:
+
+    url: grpcs://10.87.23.33:31861
+
+
+    adminUrl: https://10.87.23.33:30252
+    adminTlsCert: |
+        -----BEGIN CERTIFICATE-----
+        MIICxTCCAmygAwIBAgIUVu5K1S9bv+Fqd8kfaur8uDW9xiEwCgYIKoZIzj0EAwIw
+        bTELMAkGA1UEBhMCRVMxETAPBgNVBAcTCEFsaWNhbnRlMREwDwYDVQQJEwhBbGlj
+        YW50ZTEZMBcGA1UEChMQS3VuZyBGdSBTb2Z0d2FyZTENMAsGA1UECxMEVGVjaDEO
+        MAwGA1UEAxMFdGxzY2EwHhcNMjUwMzEwMTc1NzE4WhcNMjYwMzE3MTYyMzAwWjAk
+        MRAwDgYDVQQLEwdvcmRlcmVyMRAwDgYDVQQDEwdvcmRlcmVyMFkwEwYHKoZIzj0C
+        AQYIKoZIzj0DAQcDQgAEBE+h6m8TBNcc2YfIQTRPJOf/STtrr0QB2vrz8lh9nNry
+        iuLoLoZfYKkzYmlgTFNV12BJdu4xXGWZ6zfNmA0PWKOCATEwggEtMA4GA1UdDwEB
+        /wQEAwIDqDAdBgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwDAYDVR0TAQH/
+        BAIwADAdBgNVHQ4EFgQUWCB3Gpy5CKjCnLugODXxnI5+0SkwKwYDVR0jBCQwIoAg
+        nVeXCnLR5WDFFz+uOLErc7voqv+Z2b2gkF2LrWr/4vAwRQYDVR0RBD4wPIIJbG9j
+        YWxob3N0gg1vcmQtYmZ0LW5vZGUzghRvcmQtYmZ0LW5vZGUzLmZhYnJpY4cEfwAA
+        AYcEClcXITBbBggqAwQFBgcIAQRPeyJhdHRycyI6eyJoZi5BZmZpbGlhdGlvbiI6
+        IiIsImhmLkVucm9sbG1lbnRJRCI6Im9yZGVyZXIiLCJoZi5UeXBlIjoib3JkZXJl
+        ciJ9fTAKBggqhkjOPQQDAgNHADBEAiB9Y04/qHT+t3BYwJ5uiZ8Rcc/bV1qMB5xy
+        yx1KH3Af+wIgaBFCoOb7S+XlPjEu8so92sL/TIJo2oCB1ZXQJDAXEcA=
+        -----END CERTIFICATE-----
+
+
+    grpcOptions:
+      allow-insecure: false
+    tlsCACerts:
+      pem: |
+        -----BEGIN CERTIFICATE-----
+        MIICRDCCAeugAwIBAgIQZYq5pnkeR2bWR7KmtWYzOTAKBggqhkjOPQQDAjBtMQsw
+        CQYDVQQGEwJFUzERMA8GA1UEBxMIQWxpY2FudGUxETAPBgNVBAkTCEFsaWNhbnRl
+        MRkwFwYDVQQKExBLdW5nIEZ1IFNvZnR3YXJlMQ0wCwYDVQQLEwRUZWNoMQ4wDAYD
+        VQQDEwV0bHNjYTAeFw0yNTAzMTAxNzU3MThaFw0zNTAzMTExNzU3MThaMG0xCzAJ
+        BgNVBAYTAkVTMREwDwYDVQQHEwhBbGljYW50ZTERMA8GA1UECRMIQWxpY2FudGUx
+        GTAXBgNVBAoTEEt1bmcgRnUgU29mdHdhcmUxDTALBgNVBAsTBFRlY2gxDjAMBgNV
+        BAMTBXRsc2NhMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEFHcOTYgcTfxFLN7T
+        K6vXxXJxCxbd9H/fuFEeYl+mYcMNKKGYXhVWJY/DkmgQLZE8IycCrUrq/Ev3zfKF
+        B/X0BqNtMGswDgYDVR0PAQH/BAQDAgGmMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggr
+        BgEFBQcDATAPBgNVHRMBAf8EBTADAQH/MCkGA1UdDgQiBCCdV5cKctHlYMUXP644
+        sStzu+iq/5nZvaCQXYutav/i8DAKBggqhkjOPQQDAgNHADBEAiA13EDmbr32A84P
+        hUBlRhwEgx/gmGlAXExU5eFqfA3w1wIgW9TiQNEZR0VTxdz9mOAFG24xben9R/xv
+        5S0EpcI7YCo=
+        -----END CERTIFICATE-----
+
+  ord-bft-node4.fabric:
+
+    url: grpcs://10.87.23.33:31580
+
+
+    adminUrl: https://10.87.23.33:31354
+    adminTlsCert: |
+        -----BEGIN CERTIFICATE-----
+        MIICxTCCAmygAwIBAgIUMAnJmKgRtCbpZrAoZqzCfPlqqRgwCgYIKoZIzj0EAwIw
+        bTELMAkGA1UEBhMCRVMxETAPBgNVBAcTCEFsaWNhbnRlMREwDwYDVQQJEwhBbGlj
+        YW50ZTEZMBcGA1UEChMQS3VuZyBGdSBTb2Z0d2FyZTENMAsGA1UECxMEVGVjaDEO
+        MAwGA1UEAxMFdGxzY2EwHhcNMjUwMzEwMTc1NzE4WhcNMjYwMzE3MTYyMzAwWjAk
+        MRAwDgYDVQQLEwdvcmRlcmVyMRAwDgYDVQQDEwdvcmRlcmVyMFkwEwYHKoZIzj0C
+        AQYIKoZIzj0DAQcDQgAEh7ee48QnxVIjDimnbGJdJFXT5mPxHdeVg35khTFc0Jgi
+        OoXS6yzN+wu4bo1NpRC02QtYdkAd5x/3I7hyVHc9N6OCATEwggEtMA4GA1UdDwEB
+        /wQEAwIDqDAdBgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwDAYDVR0TAQH/
+        BAIwADAdBgNVHQ4EFgQUEo9YPJ/3WBfCkhSFxxW3l6bsSiowKwYDVR0jBCQwIoAg
+        nVeXCnLR5WDFFz+uOLErc7voqv+Z2b2gkF2LrWr/4vAwRQYDVR0RBD4wPIIJbG9j
+        YWxob3N0gg1vcmQtYmZ0LW5vZGU0ghRvcmQtYmZ0LW5vZGU0LmZhYnJpY4cEfwAA
+        AYcEClcXITBbBggqAwQFBgcIAQRPeyJhdHRycyI6eyJoZi5BZmZpbGlhdGlvbiI6
+        IiIsImhmLkVucm9sbG1lbnRJRCI6Im9yZGVyZXIiLCJoZi5UeXBlIjoib3JkZXJl
+        ciJ9fTAKBggqhkjOPQQDAgNHADBEAiBuZVYujvo45DuU0N2lqSyAF6azc13Y6nE3
+        iliQY4PJZgIgVpL0fb3fG9YU+IwutZUVMqA3Rq1fxhCb0HQDLyUw9tI=
+        -----END CERTIFICATE-----
+
+
+    grpcOptions:
+      allow-insecure: false
+    tlsCACerts:
+      pem: |
+        -----BEGIN CERTIFICATE-----
+        MIICRDCCAeugAwIBAgIQZYq5pnkeR2bWR7KmtWYzOTAKBggqhkjOPQQDAjBtMQsw
+        CQYDVQQGEwJFUzERMA8GA1UEBxMIQWxpY2FudGUxETAPBgNVBAkTCEFsaWNhbnRl
+        MRkwFwYDVQQKExBLdW5nIEZ1IFNvZnR3YXJlMQ0wCwYDVQQLEwRUZWNoMQ4wDAYD
+        VQQDEwV0bHNjYTAeFw0yNTAzMTAxNzU3MThaFw0zNTAzMTExNzU3MThaMG0xCzAJ
+        BgNVBAYTAkVTMREwDwYDVQQHEwhBbGljYW50ZTERMA8GA1UECRMIQWxpY2FudGUx
+        GTAXBgNVBAoTEEt1bmcgRnUgU29mdHdhcmUxDTALBgNVBAsTBFRlY2gxDjAMBgNV
+        BAMTBXRsc2NhMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEFHcOTYgcTfxFLN7T
+        K6vXxXJxCxbd9H/fuFEeYl+mYcMNKKGYXhVWJY/DkmgQLZE8IycCrUrq/Ev3zfKF
+        B/X0BqNtMGswDgYDVR0PAQH/BAQDAgGmMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggr
+        BgEFBQcDATAPBgNVHRMBAf8EBTADAQH/MCkGA1UdDgQiBCCdV5cKctHlYMUXP644
+        sStzu+iq/5nZvaCQXYutav/i8DAKBggqhkjOPQQDAgNHADBEAiA13EDmbr32A84P
+        hUBlRhwEgx/gmGlAXExU5eFqfA3w1wIgW9TiQNEZR0VTxdz9mOAFG24xben9R/xv
+        5S0EpcI7YCo=
+        -----END CERTIFICATE-----
+
+  ord-node1.fabric:
+
+    url: grpcs://10.87.23.33:30995
+
+
+    adminUrl: https://10.87.23.33:31918
+    adminTlsCert: |
+        -----BEGIN CERTIFICATE-----
+        MIICvjCCAmSgAwIBAgIUFsvv885aV4c5X7+JzHK/M4MfOxUwCgYIKoZIzj0EAwIw
+        bTELMAkGA1UEBhMCRVMxETAPBgNVBAcTCEFsaWNhbnRlMREwDwYDVQQJEwhBbGlj
+        YW50ZTEZMBcGA1UEChMQS3VuZyBGdSBTb2Z0d2FyZTENMAsGA1UECxMEVGVjaDEO
+        MAwGA1UEAxMFdGxzY2EwHhcNMjUwMzEwMTc1NzE4WhcNMjYwMzExMTgyODAwWjAk
+        MRAwDgYDVQQLEwdvcmRlcmVyMRAwDgYDVQQDEwdvcmRlcmVyMFkwEwYHKoZIzj0C
+        AQYIKoZIzj0DAQcDQgAESbbpnrDUPhlWytC/rgneSzJ8feZS1U7DllBTbNzLodN2
+        pLupp6764CAgGovA9SHpkxmfhRRygbGcF5OJWKtP/KOCASkwggElMA4GA1UdDwEB
+        /wQEAwIDqDAdBgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwDAYDVR0TAQH/
+        BAIwADAdBgNVHQ4EFgQUtpB/JUHqtZqwvDLvs2xqAjKgNm8wKwYDVR0jBCQwIoAg
+        nVeXCnLR5WDFFz+uOLErc7voqv+Z2b2gkF2LrWr/4vAwPQYDVR0RBDYwNIIJbG9j
+        YWxob3N0gglvcmQtbm9kZTGCEG9yZC1ub2RlMS5mYWJyaWOHBH8AAAGHBApXFyEw
+        WwYIKgMEBQYHCAEET3siYXR0cnMiOnsiaGYuQWZmaWxpYXRpb24iOiIiLCJoZi5F
+        bnJvbGxtZW50SUQiOiJvcmRlcmVyIiwiaGYuVHlwZSI6Im9yZGVyZXIifX0wCgYI
+        KoZIzj0EAwIDSAAwRQIhAPnkJZ3843UDLlj6SfSd1pNvlu52bWePuXInUpiS0Xw+
+        AiBmhfLiDJ7YNNDdP/0xh1JsV+H4hUNiqWSK9gG5dNX7TA==
+        -----END CERTIFICATE-----
+
+
+    grpcOptions:
+      allow-insecure: false
+    tlsCACerts:
+      pem: |
+        -----BEGIN CERTIFICATE-----
+        MIICRDCCAeugAwIBAgIQZYq5pnkeR2bWR7KmtWYzOTAKBggqhkjOPQQDAjBtMQsw
+        CQYDVQQGEwJFUzERMA8GA1UEBxMIQWxpY2FudGUxETAPBgNVBAkTCEFsaWNhbnRl
+        MRkwFwYDVQQKExBLdW5nIEZ1IFNvZnR3YXJlMQ0wCwYDVQQLEwRUZWNoMQ4wDAYD
+        VQQDEwV0bHNjYTAeFw0yNTAzMTAxNzU3MThaFw0zNTAzMTExNzU3MThaMG0xCzAJ
+        BgNVBAYTAkVTMREwDwYDVQQHEwhBbGljYW50ZTERMA8GA1UECRMIQWxpY2FudGUx
+        GTAXBgNVBAoTEEt1bmcgRnUgU29mdHdhcmUxDTALBgNVBAsTBFRlY2gxDjAMBgNV
+        BAMTBXRsc2NhMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEFHcOTYgcTfxFLN7T
+        K6vXxXJxCxbd9H/fuFEeYl+mYcMNKKGYXhVWJY/DkmgQLZE8IycCrUrq/Ev3zfKF
+        B/X0BqNtMGswDgYDVR0PAQH/BAQDAgGmMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggr
+        BgEFBQcDATAPBgNVHRMBAf8EBTADAQH/MCkGA1UdDgQiBCCdV5cKctHlYMUXP644
+        sStzu+iq/5nZvaCQXYutav/i8DAKBggqhkjOPQQDAgNHADBEAiA13EDmbr32A84P
+        hUBlRhwEgx/gmGlAXExU5eFqfA3w1wIgW9TiQNEZR0VTxdz9mOAFG24xben9R/xv
+        5S0EpcI7YCo=
+        -----END CERTIFICATE-----
+
+  ord-node2.fabric:
+
+    url: grpcs://10.87.23.33:30550
+
+
+    adminUrl: https://10.87.23.33:31486
+    adminTlsCert: |
+        -----BEGIN CERTIFICATE-----
+        MIICvTCCAmSgAwIBAgIUROFA+L77FhWzPSYSrQNYU12OICIwCgYIKoZIzj0EAwIw
+        bTELMAkGA1UEBhMCRVMxETAPBgNVBAcTCEFsaWNhbnRlMREwDwYDVQQJEwhBbGlj
+        YW50ZTEZMBcGA1UEChMQS3VuZyBGdSBTb2Z0d2FyZTENMAsGA1UECxMEVGVjaDEO
+        MAwGA1UEAxMFdGxzY2EwHhcNMjUwMzEwMTc1NzE4WhcNMjYwMzExMTgyODAwWjAk
+        MRAwDgYDVQQLEwdvcmRlcmVyMRAwDgYDVQQDEwdvcmRlcmVyMFkwEwYHKoZIzj0C
+        AQYIKoZIzj0DAQcDQgAEahEW8KK8dVNI/sU10hfE6k1KrSLuACK/C6Gx2XdBvxhh
+        BvzJUiAE/kOvhkcUxIRKSLbkEkYFHwDF4MYFAwIyDqOCASkwggElMA4GA1UdDwEB
+        /wQEAwIDqDAdBgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwDAYDVR0TAQH/
+        BAIwADAdBgNVHQ4EFgQULXIC9UltOC99LejGuiwWf/zzKJ8wKwYDVR0jBCQwIoAg
+        nVeXCnLR5WDFFz+uOLErc7voqv+Z2b2gkF2LrWr/4vAwPQYDVR0RBDYwNIIJbG9j
+        YWxob3N0gglvcmQtbm9kZTKCEG9yZC1ub2RlMi5mYWJyaWOHBH8AAAGHBApXFyEw
+        WwYIKgMEBQYHCAEET3siYXR0cnMiOnsiaGYuQWZmaWxpYXRpb24iOiIiLCJoZi5F
+        bnJvbGxtZW50SUQiOiJvcmRlcmVyIiwiaGYuVHlwZSI6Im9yZGVyZXIifX0wCgYI
+        KoZIzj0EAwIDRwAwRAIgT7UqHxsPXAkiloIJetCerjBaeea21O2sB+CLnuPOZPQC
+        IHjrswkrQnDXKh3SMxAJIP8UKpadXtawXU/R4s4d2RBR
+        -----END CERTIFICATE-----
+
+
+    grpcOptions:
+      allow-insecure: false
+    tlsCACerts:
+      pem: |
+        -----BEGIN CERTIFICATE-----
+        MIICRDCCAeugAwIBAgIQZYq5pnkeR2bWR7KmtWYzOTAKBggqhkjOPQQDAjBtMQsw
+        CQYDVQQGEwJFUzERMA8GA1UEBxMIQWxpY2FudGUxETAPBgNVBAkTCEFsaWNhbnRl
+        MRkwFwYDVQQKExBLdW5nIEZ1IFNvZnR3YXJlMQ0wCwYDVQQLEwRUZWNoMQ4wDAYD
+        VQQDEwV0bHNjYTAeFw0yNTAzMTAxNzU3MThaFw0zNTAzMTExNzU3MThaMG0xCzAJ
+        BgNVBAYTAkVTMREwDwYDVQQHEwhBbGljYW50ZTERMA8GA1UECRMIQWxpY2FudGUx
+        GTAXBgNVBAoTEEt1bmcgRnUgU29mdHdhcmUxDTALBgNVBAsTBFRlY2gxDjAMBgNV
+        BAMTBXRsc2NhMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEFHcOTYgcTfxFLN7T
+        K6vXxXJxCxbd9H/fuFEeYl+mYcMNKKGYXhVWJY/DkmgQLZE8IycCrUrq/Ev3zfKF
+        B/X0BqNtMGswDgYDVR0PAQH/BAQDAgGmMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggr
+        BgEFBQcDATAPBgNVHRMBAf8EBTADAQH/MCkGA1UdDgQiBCCdV5cKctHlYMUXP644
+        sStzu+iq/5nZvaCQXYutav/i8DAKBggqhkjOPQQDAgNHADBEAiA13EDmbr32A84P
+        hUBlRhwEgx/gmGlAXExU5eFqfA3w1wIgW9TiQNEZR0VTxdz9mOAFG24xben9R/xv
+        5S0EpcI7YCo=
+        -----END CERTIFICATE-----
+
+  ord-node3.fabric:
+
+    url: grpcs://10.87.23.33:31136
+
+
+    adminUrl: https://10.87.23.33:31685
+    adminTlsCert: |
+        -----BEGIN CERTIFICATE-----
+        MIICvjCCAmSgAwIBAgIUD6zWdAUXEHQP1rSpugHoD09wtRYwCgYIKoZIzj0EAwIw
+        bTELMAkGA1UEBhMCRVMxETAPBgNVBAcTCEFsaWNhbnRlMREwDwYDVQQJEwhBbGlj
+        YW50ZTEZMBcGA1UEChMQS3VuZyBGdSBTb2Z0d2FyZTENMAsGA1UECxMEVGVjaDEO
+        MAwGA1UEAxMFdGxzY2EwHhcNMjUwMzEwMTc1NzE4WhcNMjYwMzExMTgyODAwWjAk
+        MRAwDgYDVQQLEwdvcmRlcmVyMRAwDgYDVQQDEwdvcmRlcmVyMFkwEwYHKoZIzj0C
+        AQYIKoZIzj0DAQcDQgAE8a5Pyx8bbHIYyR7jjbNcTL+awI9Yt4/E/GK8PfiFGBNC
+        0EcVKRol0bZ9X8wfaGEYKSTVsWDkpP1tAMSsFLuyCKOCASkwggElMA4GA1UdDwEB
+        /wQEAwIDqDAdBgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwDAYDVR0TAQH/
+        BAIwADAdBgNVHQ4EFgQU83clIlEWHkJ1dEA+m0VL9npfg7IwKwYDVR0jBCQwIoAg
+        nVeXCnLR5WDFFz+uOLErc7voqv+Z2b2gkF2LrWr/4vAwPQYDVR0RBDYwNIIJbG9j
+        YWxob3N0gglvcmQtbm9kZTOCEG9yZC1ub2RlMy5mYWJyaWOHBH8AAAGHBApXFyEw
+        WwYIKgMEBQYHCAEET3siYXR0cnMiOnsiaGYuQWZmaWxpYXRpb24iOiIiLCJoZi5F
+        bnJvbGxtZW50SUQiOiJvcmRlcmVyIiwiaGYuVHlwZSI6Im9yZGVyZXIifX0wCgYI
+        KoZIzj0EAwIDSAAwRQIhAKR3T6UdUUJp4Hm0u7iupxInjBM9iZyjDerXt9U5jpxB
+        AiBLp2faNJ7CWVT8L7aeMRBA71dtK3nFgYpHuHsnJ9gXUQ==
+        -----END CERTIFICATE-----
+
+
+    grpcOptions:
+      allow-insecure: false
+    tlsCACerts:
+      pem: |
+        -----BEGIN CERTIFICATE-----
+        MIICRDCCAeugAwIBAgIQZYq5pnkeR2bWR7KmtWYzOTAKBggqhkjOPQQDAjBtMQsw
+        CQYDVQQGEwJFUzERMA8GA1UEBxMIQWxpY2FudGUxETAPBgNVBAkTCEFsaWNhbnRl
+        MRkwFwYDVQQKExBLdW5nIEZ1IFNvZnR3YXJlMQ0wCwYDVQQLEwRUZWNoMQ4wDAYD
+        VQQDEwV0bHNjYTAeFw0yNTAzMTAxNzU3MThaFw0zNTAzMTExNzU3MThaMG0xCzAJ
+        BgNVBAYTAkVTMREwDwYDVQQHEwhBbGljYW50ZTERMA8GA1UECRMIQWxpY2FudGUx
+        GTAXBgNVBAoTEEt1bmcgRnUgU29mdHdhcmUxDTALBgNVBAsTBFRlY2gxDjAMBgNV
+        BAMTBXRsc2NhMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEFHcOTYgcTfxFLN7T
+        K6vXxXJxCxbd9H/fuFEeYl+mYcMNKKGYXhVWJY/DkmgQLZE8IycCrUrq/Ev3zfKF
+        B/X0BqNtMGswDgYDVR0PAQH/BAQDAgGmMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggr
+        BgEFBQcDATAPBgNVHRMBAf8EBTADAQH/MCkGA1UdDgQiBCCdV5cKctHlYMUXP644
+        sStzu+iq/5nZvaCQXYutav/i8DAKBggqhkjOPQQDAgNHADBEAiA13EDmbr32A84P
+        hUBlRhwEgx/gmGlAXExU5eFqfA3w1wIgW9TiQNEZR0VTxdz9mOAFG24xben9R/xv
+        5S0EpcI7YCo=
+        -----END CERTIFICATE-----
+
+  ord-node4.fabric:
+
+    url: grpcs://10.87.23.33:30715
+
+
+    adminUrl: https://10.87.23.33:30644
+    adminTlsCert: |
+        -----BEGIN CERTIFICATE-----
+        MIICvjCCAmSgAwIBAgIUQiXgRXUPRrfhmaR51uQKD+ZAx5YwCgYIKoZIzj0EAwIw
+        bTELMAkGA1UEBhMCRVMxETAPBgNVBAcTCEFsaWNhbnRlMREwDwYDVQQJEwhBbGlj
+        YW50ZTEZMBcGA1UEChMQS3VuZyBGdSBTb2Z0d2FyZTENMAsGA1UECxMEVGVjaDEO
+        MAwGA1UEAxMFdGxzY2EwHhcNMjUwMzEwMTc1NzE4WhcNMjYwMzExMTgyODAwWjAk
+        MRAwDgYDVQQLEwdvcmRlcmVyMRAwDgYDVQQDEwdvcmRlcmVyMFkwEwYHKoZIzj0C
+        AQYIKoZIzj0DAQcDQgAEQKEZ74F958kkAi6rtVXUqobRQFbmgrmSSgOoz9eF+SMS
+        JqJpYMJ6p2JHA1/yFKkfdshbKt4zXfTRQf4U1hujF6OCASkwggElMA4GA1UdDwEB
+        /wQEAwIDqDAdBgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwDAYDVR0TAQH/
+        BAIwADAdBgNVHQ4EFgQURN3rc8YPlfcjobEXLVzmnjMva40wKwYDVR0jBCQwIoAg
+        nVeXCnLR5WDFFz+uOLErc7voqv+Z2b2gkF2LrWr/4vAwPQYDVR0RBDYwNIIJbG9j
+        YWxob3N0gglvcmQtbm9kZTSCEG9yZC1ub2RlNC5mYWJyaWOHBH8AAAGHBApXFyEw
+        WwYIKgMEBQYHCAEET3siYXR0cnMiOnsiaGYuQWZmaWxpYXRpb24iOiIiLCJoZi5F
+        bnJvbGxtZW50SUQiOiJvcmRlcmVyIiwiaGYuVHlwZSI6Im9yZGVyZXIifX0wCgYI
+        KoZIzj0EAwIDSAAwRQIhALVG6wGeBCc7eDz5D4K/NcsQXBNOaduNA/OZWljaL7rK
+        AiBw3S+jEtdeL5r+egDEtJQvXu93b2yTkWEKOUW22Jj28A==
+        -----END CERTIFICATE-----
+
+
+    grpcOptions:
+      allow-insecure: false
+    tlsCACerts:
+      pem: |
+        -----BEGIN CERTIFICATE-----
+        MIICRDCCAeugAwIBAgIQZYq5pnkeR2bWR7KmtWYzOTAKBggqhkjOPQQDAjBtMQsw
+        CQYDVQQGEwJFUzERMA8GA1UEBxMIQWxpY2FudGUxETAPBgNVBAkTCEFsaWNhbnRl
+        MRkwFwYDVQQKExBLdW5nIEZ1IFNvZnR3YXJlMQ0wCwYDVQQLEwRUZWNoMQ4wDAYD
+        VQQDEwV0bHNjYTAeFw0yNTAzMTAxNzU3MThaFw0zNTAzMTExNzU3MThaMG0xCzAJ
+        BgNVBAYTAkVTMREwDwYDVQQHEwhBbGljYW50ZTERMA8GA1UECRMIQWxpY2FudGUx
+        GTAXBgNVBAoTEEt1bmcgRnUgU29mdHdhcmUxDTALBgNVBAsTBFRlY2gxDjAMBgNV
+        BAMTBXRsc2NhMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEFHcOTYgcTfxFLN7T
+        K6vXxXJxCxbd9H/fuFEeYl+mYcMNKKGYXhVWJY/DkmgQLZE8IycCrUrq/Ev3zfKF
+        B/X0BqNtMGswDgYDVR0PAQH/BAQDAgGmMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggr
+        BgEFBQcDATAPBgNVHRMBAf8EBTADAQH/MCkGA1UdDgQiBCCdV5cKctHlYMUXP644
+        sStzu+iq/5nZvaCQXYutav/i8DAKBggqhkjOPQQDAgNHADBEAiA13EDmbr32A84P
+        hUBlRhwEgx/gmGlAXExU5eFqfA3w1wIgW9TiQNEZR0VTxdz9mOAFG24xben9R/xv
+        5S0EpcI7YCo=
+        -----END CERTIFICATE-----
+
+
+
+peers:
+  org1-peer0.fabric:
+
+    url: grpcs://10.87.23.33:31547
+
+    grpcOptions:
+      allow-insecure: false
+    tlsCACerts:
+      pem: |
+        -----BEGIN CERTIFICATE-----
+        MIICRjCCAeygAwIBAgIRAJ7oF8atKQHst1aqnm5/p2YwCgYIKoZIzj0EAwIwbTEL
+        MAkGA1UEBhMCRVMxETAPBgNVBAcTCEFsaWNhbnRlMREwDwYDVQQJEwhBbGljYW50
+        ZTEZMBcGA1UEChMQS3VuZyBGdSBTb2Z0d2FyZTENMAsGA1UECxMEVGVjaDEOMAwG
+        A1UEAxMFdGxzY2EwHhcNMjUwMzEwMTM1MTE0WhcNMzUwMzExMTM1MTE0WjBtMQsw
+        CQYDVQQGEwJFUzERMA8GA1UEBxMIQWxpY2FudGUxETAPBgNVBAkTCEFsaWNhbnRl
+        MRkwFwYDVQQKExBLdW5nIEZ1IFNvZnR3YXJlMQ0wCwYDVQQLEwRUZWNoMQ4wDAYD
+        VQQDEwV0bHNjYTBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABOQYmzv0HJCq3/oz
+        XqcUrqGpFN29Ce5koN57cBQAGCEEOWFWl3Z/oMFn66SluHdF8fZJ7j2Ya8y+EMJI
+        L8ACydOjbTBrMA4GA1UdDwEB/wQEAwIBpjAdBgNVHSUEFjAUBggrBgEFBQcDAgYI
+        KwYBBQUHAwEwDwYDVR0TAQH/BAUwAwEB/zApBgNVHQ4EIgQgN/yz6fSh2tCkd7Mm
+        honq9GsMTa8KF5mGsd3pTaEy578wCgYIKoZIzj0EAwIDSAAwRQIgbi8JhcQVCfhG
+        WLsodnYBFhbVdV8GZ5r6Yq7E2Hba58kCIQCEYjWtWk4G8XOJ9Bd/B6vAFiwwm0RV
+        M8XXLYdhP048pw==
+        -----END CERTIFICATE-----
+
+certificateAuthorities:
+
+  ord-ca.fabric:
+
+    url: https://10.87.23.33:31440
+
+
+    registrar:
+        enrollId: enroll
+        enrollSecret: "enrollpw"
+
+    caName: ca
+    tlsCACerts:
+      pem:
+       - |
+            -----BEGIN CERTIFICATE-----
+            MIICSjCCAfCgAwIBAgIQe9lCE0VtwInDdWGK1D2anDAKBggqhkjOPQQDAjBSMRMw
+            EQYDVQQGEwpDYWxpZm9ybmlhMQkwBwYDVQQHEwAxCTAHBgNVBAkTADEUMBIGA1UE
+            ChMLSHlwZXJsZWRnZXIxDzANBgNVBAsTBkZhYnJpYzAeFw0yNTAzMTAxODI1MjBa
+            Fw0zNTAzMTExODI1MjBaMFIxEzARBgNVBAYTCkNhbGlmb3JuaWExCTAHBgNVBAcT
+            ADEJMAcGA1UECRMAMRQwEgYDVQQKEwtIeXBlcmxlZGdlcjEPMA0GA1UECxMGRmFi
+            cmljMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAElWKWL60zm3+Ul4rGf6StAHht
+            VJ2NXbD+fCD070hNOR3wxl11XJPDurSlVvYDwnEAMEYxRZjXY0ZrMt4T33oK2aOB
+            pzCBpDAOBgNVHQ8BAf8EBAMCAaYwHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUF
+            BwMBMA8GA1UdEwEB/wQFMAMBAf8wKQYDVR0OBCIEILqYjPed9AFjoT1NnwgOY1QU
+            oZaCs4TgKIdYPCQGfo7cMDcGA1UdEQQwMC6CCWxvY2FsaG9zdIIGb3JkLWNhgg1v
+            cmQtY2EuZmFicmljhwR/AAABhwQKVxchMAoGCCqGSM49BAMCA0gAMEUCIQCSqXao
+            xHhGGcK0PX2DUkz1n0D+C7SQ+E+UFtQTp1pnEAIgVMIxfvz6zU3XYlRKT2CRggqu
+            toRB1z884ZZzk4S8nws=
+            -----END CERTIFICATE-----
+
+
+  org1-ca.fabric:
+
+    url: https://10.87.23.33:30566
+
+
+    registrar:
+        enrollId: enroll
+        enrollSecret: "enrollpw"
+
+    caName: ca
+    tlsCACerts:
+      pem:
+       - |
+            -----BEGIN CERTIFICATE-----
+            MIICTTCCAfOgAwIBAgIRALVxV3cYtMzdLfyNU7D8wKkwCgYIKoZIzj0EAwIwUjET
+            MBEGA1UEBhMKQ2FsaWZvcm5pYTEJMAcGA1UEBxMAMQkwBwYDVQQJEwAxFDASBgNV
+            BAoTC0h5cGVybGVkZ2VyMQ8wDQYDVQQLEwZGYWJyaWMwHhcNMjUwMzEwMTYzOTMw
+            WhcNMzUwMzExMTYzOTMwWjBSMRMwEQYDVQQGEwpDYWxpZm9ybmlhMQkwBwYDVQQH
+            EwAxCTAHBgNVBAkTADEUMBIGA1UEChMLSHlwZXJsZWRnZXIxDzANBgNVBAsTBkZh
+            YnJpYzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABCWEtu7ID60N5/OLa6DYqbHj
+            D4r4F+H7VsiDH6LYDgluiLPaDtphz1CZNrxNMwvA7lUj4tAInW0xila0kjxZskuj
+            gakwgaYwDgYDVR0PAQH/BAQDAgGmMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEF
+            BQcDATAPBgNVHRMBAf8EBTADAQH/MCkGA1UdDgQiBCAVYYkewW1RXpeCrd5w2n5+
+            RrjndwN1tsivXYsOfVdoWzA5BgNVHREEMjAwgglsb2NhbGhvc3SCB29yZzEtY2GC
+            Dm9yZzEtY2EuZmFicmljhwR/AAABhwQKVxchMAoGCCqGSM49BAMCA0gAMEUCIQCO
+            U6/LBthceTJOiiiaRHpf7z6/LoJzzIOSl8AUdmtKNgIgVNkTW5k21WSp6pvsudM2
+            B6rrnjNeVsrckUW6m0L1xIk=
+            -----END CERTIFICATE-----
+
+
+  org2-ca.fabric:
+
+    url: https://10.87.23.33:31231
+
+
+    registrar:
+        enrollId: enroll
+        enrollSecret: "enrollpw"
+
+    caName: ca
+    tlsCACerts:
+      pem:
+       - |
+            -----BEGIN CERTIFICATE-----
+            MIICRjCCAeygAwIBAgIQLicxiLEqNr0Qx2HZWKS+RzAKBggqhkjOPQQDAjBSMRMw
+            EQYDVQQGEwpDYWxpZm9ybmlhMQkwBwYDVQQHEwAxCTAHBgNVBAkTADEUMBIGA1UE
+            ChMLSHlwZXJsZWRnZXIxDzANBgNVBAsTBkZhYnJpYzAeFw0yNTAzMTAxODExMzBa
+            Fw0zNTAzMTExODExMzBaMFIxEzARBgNVBAYTCkNhbGlmb3JuaWExCTAHBgNVBAcT
+            ADEJMAcGA1UECRMAMRQwEgYDVQQKEwtIeXBlcmxlZGdlcjEPMA0GA1UECxMGRmFi
+            cmljMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE/7QovM4v8X00a4pzuySZkTeH
+            GO9efH8AMYvvpF77X9wyZmGjjGQBdptJ6kKC8SG0+0DsrQQ/HrN45hCS1MATbKOB
+            ozCBoDAOBgNVHQ8BAf8EBAMCAaYwHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUF
+            BwMBMA8GA1UdEwEB/wQFMAMBAf8wKQYDVR0OBCIEIMwTO2TqAEemty0vUlZNIkUW
+            vki3DGs3Y6X7L7YuSPDkMDMGA1UdEQQsMCqCCWxvY2FsaG9zdIIHb3JnMi1jYYIO
+            b3JnMi1jYS5mYWJyaWOHBH8AAAEwCgYIKoZIzj0EAwIDSAAwRQIhAJtjgHgd4yip
+            ftMvW9qDQxc0nEX2nld0QwH5z3bpQWw2AiBE3AFpqYIu9svOTGsKfpDXZZqPHLHg
+            KMzymqdNixlHYw==
+            -----END CERTIFICATE-----
+
+
+  org3-ca.fabric:
+
+    url: https://10.87.23.33:31004
+
+
+    registrar:
+        enrollId: enroll
+        enrollSecret: "enrollpw"
+
+    caName: ca
+    tlsCACerts:
+      pem:
+       - |
+            -----BEGIN CERTIFICATE-----
+            MIICTTCCAfOgAwIBAgIRAK7sVB+BnjgMPeUVYmx6YXIwCgYIKoZIzj0EAwIwUjET
+            MBEGA1UEBhMKQ2FsaWZvcm5pYTEJMAcGA1UEBxMAMQkwBwYDVQQJEwAxFDASBgNV
+            BAoTC0h5cGVybGVkZ2VyMQ8wDQYDVQQLEwZGYWJyaWMwHhcNMjUwMzEwMTgyMTU2
+            WhcNMzUwMzExMTgyMTU2WjBSMRMwEQYDVQQGEwpDYWxpZm9ybmlhMQkwBwYDVQQH
+            EwAxCTAHBgNVBAkTADEUMBIGA1UEChMLSHlwZXJsZWRnZXIxDzANBgNVBAsTBkZh
+            YnJpYzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABKSM+xWUOhIsrVJOQtgwhFrl
+            3s8jCF8esjTZBf2U5CZnEjzRpJlltsUniSQejYRp6QMT9akXvLRDMLsBSRmujuqj
+            gakwgaYwDgYDVR0PAQH/BAQDAgGmMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEF
+            BQcDATAPBgNVHRMBAf8EBTADAQH/MCkGA1UdDgQiBCBVaiq1iuHG6a5RtGhWLx7/
+            Fo1MZ/IbF1FC5CQ/jtG0GjA5BgNVHREEMjAwgglsb2NhbGhvc3SCB29yZzMtY2GC
+            Dm9yZzMtY2EuZmFicmljhwR/AAABhwQKVxchMAoGCCqGSM49BAMCA0gAMEUCIDNP
+            QZV6fp7XIpxcyXsxNqmrY7Kxz7TpZgB0YwcG9AruAiEAvN0tIj9Ua4OV3MM8l5Ch
+            c0iC+uOFo1TbkM2cXGLmV5o=
+            -----END CERTIFICATE-----
+
+
+
+channels:
+  demobft:
+
+    orderers:
+      - ord-bft-node1.fabric
+      - ord-bft-node2.fabric
+      - ord-bft-node3.fabric
+      - ord-bft-node4.fabric
+
+    peers:
+       org1-peer0.fabric:
+        discover: true
+        endorsingPeer: true
+        chaincodeQuery: true
+        ledgerQuery: true
+        eventSource: true

@@ -1,0 +1,332 @@
+﻿name: Caliper Benchmarks
+version: "2.0.0"
+
+caliper:
+  blockchain: fabric
+
+channels:
+  - channelName: demobftorg10ord10
+    contracts:
+    - id: graph5
+
+organizations:
+  - mspid: Org1MSP
+    identities:
+      certificates:
+      - name: admin
+        clientSignedCert:
+          pem: |
+            -----BEGIN CERTIFICATE-----
+            MIICUzCCAfmgAwIBAgIUVgAdzfVVWf0+w5T7X2PG8Wy+cj8wCgYIKoZIzj0EAwIw
+            ajELMAkGA1UEBhMCRVMxETAPBgNVBAcTCEFsaWNhbnRlMREwDwYDVQQJEwhBbGlj
+            YW50ZTEZMBcGA1UEChMQS3VuZyBGdSBTb2Z0d2FyZTENMAsGA1UECxMEVGVjaDEL
+            MAkGA1UEAxMCY2EwHhcNMjUwMzI1MTgyMjQzWhcNMjYwMzI2MjAyNDAwWjAgMQ4w
+            DAYDVQQLEwVhZG1pbjEOMAwGA1UEAxMFYWRtaW4wWTATBgcqhkjOPQIBBggqhkjO
+            PQMBBwNCAASYp8LBjbGUAWy2CJ8HRalleE5PWo9IZFFrqGbZGwVg64upfABP6oAm
+            IYu6i5dDcgO5qAAfmxZNDWH0VbUbzUf4o4HGMIHDMA4GA1UdDwEB/wQEAwIHgDAM
+            BgNVHRMBAf8EAjAAMB0GA1UdDgQWBBQOWDOYvvYHG0YEpMWhNcRAVON4SjArBgNV
+            HSMEJDAigCB6NKdGgFNK1KOifnfKHnz9fOUqwfHT6VHPTuiitP6FIjBXBggqAwQF
+            BgcIAQRLeyJhdHRycyI6eyJoZi5BZmZpbGlhdGlvbiI6IiIsImhmLkVucm9sbG1l
+            bnRJRCI6ImFkbWluIiwiaGYuVHlwZSI6ImFkbWluIn19MAoGCCqGSM49BAMCA0gA
+            MEUCIQDE6RQj/sG0x9fd5TsmzWRaUES76AqcidKHMxk4fQOgWgIgO4+ITuRwcJsV
+            UmaetL7g1oin9Nbl4DdEuSVugHHlyWE=
+            -----END CERTIFICATE-----
+            
+        clientPrivateKey:
+          pem: |
+            -----BEGIN PRIVATE KEY-----
+            MIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQg0qgurri8SK8p2IkJ
+            RgSK8et+b/DtFbdAhg4Oc6cRn8OhRANCAASYp8LBjbGUAWy2CJ8HRalleE5PWo9I
+            ZFFrqGbZGwVg64upfABP6oAmIYu6i5dDcgO5qAAfmxZNDWH0VbUbzUf4
+            -----END PRIVATE KEY-----
+            
+    connectionProfile:
+      path: ./org1.yaml
+  - mspid: Org2MSP
+    identities:
+      certificates:
+      - name: admin
+        clientSignedCert:
+          pem: |
+            -----BEGIN CERTIFICATE-----
+            MIICUjCCAfmgAwIBAgIUG7+5wTMtQq4v7pPrPqwPOZsCxogwCgYIKoZIzj0EAwIw
+            ajELMAkGA1UEBhMCRVMxETAPBgNVBAcTCEFsaWNhbnRlMREwDwYDVQQJEwhBbGlj
+            YW50ZTEZMBcGA1UEChMQS3VuZyBGdSBTb2Z0d2FyZTENMAsGA1UECxMEVGVjaDEL
+            MAkGA1UEAxMCY2EwHhcNMjUwMzI1MTgzNDMxWhcNMjYwMzI2MjAyNDAwWjAgMQ4w
+            DAYDVQQLEwVhZG1pbjEOMAwGA1UEAxMFYWRtaW4wWTATBgcqhkjOPQIBBggqhkjO
+            PQMBBwNCAAQVgdV6x7CVs44wq/qRIDyP+tC6SaK9ckwtPJnEvOFASz1fd+3zgsat
+            LCZz2FjGPnfF84XMVd546C4ODSyWrKrAo4HGMIHDMA4GA1UdDwEB/wQEAwIHgDAM
+            BgNVHRMBAf8EAjAAMB0GA1UdDgQWBBS8OLzdwgTGf+vclpL3WjyW2TRKzTArBgNV
+            HSMEJDAigCDuzpRYXeLJTeCO8qZUl7Ee0Y/C1+oMGm4T1stvzvRWBzBXBggqAwQF
+            BgcIAQRLeyJhdHRycyI6eyJoZi5BZmZpbGlhdGlvbiI6IiIsImhmLkVucm9sbG1l
+            bnRJRCI6ImFkbWluIiwiaGYuVHlwZSI6ImFkbWluIn19MAoGCCqGSM49BAMCA0cA
+            MEQCIDdUuu9mJNdUJxsLQJXpWM4N1nvQCBO/UjoMhWyhjd43AiAugAMOEUlDa8sD
+            e/Ro0+7AV32MSHU1hH/BVNXFsuow7Q==
+            -----END CERTIFICATE-----
+            
+        clientPrivateKey:
+          pem: |
+            -----BEGIN PRIVATE KEY-----
+            MIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgpMj8HGG3/nNw1yNz
+            ucer2g8UN8EQoJaBzJv8WgXfsh2hRANCAAQVgdV6x7CVs44wq/qRIDyP+tC6SaK9
+            ckwtPJnEvOFASz1fd+3zgsatLCZz2FjGPnfF84XMVd546C4ODSyWrKrA
+            -----END PRIVATE KEY-----
+            
+    connectionProfile:
+      path: ./org2.yaml
+  - mspid: Org3MSP
+    identities:
+      certificates:
+      - name: admin
+        clientSignedCert:
+          pem: |
+            -----BEGIN CERTIFICATE-----
+            MIICUzCCAfmgAwIBAgIUUl/uX0bJrKk/fUeaTe2gAb+TqBkwCgYIKoZIzj0EAwIw
+            ajELMAkGA1UEBhMCRVMxETAPBgNVBAcTCEFsaWNhbnRlMREwDwYDVQQJEwhBbGlj
+            YW50ZTEZMBcGA1UEChMQS3VuZyBGdSBTb2Z0d2FyZTENMAsGA1UECxMEVGVjaDEL
+            MAkGA1UEAxMCY2EwHhcNMjUwMzI1MTg0MDE1WhcNMjYwMzI2MjAyNTAwWjAgMQ4w
+            DAYDVQQLEwVhZG1pbjEOMAwGA1UEAxMFYWRtaW4wWTATBgcqhkjOPQIBBggqhkjO
+            PQMBBwNCAAQBBdF7C78E7qNvc2Zdbu5dVhG/sMIz5SGESNuQBBBw/OR7/JMDr8Sy
+            pr2HFxyi6HC5ZO/TqP+yhJHmLxEl+qtdo4HGMIHDMA4GA1UdDwEB/wQEAwIHgDAM
+            BgNVHRMBAf8EAjAAMB0GA1UdDgQWBBSTqtdKXevZ7wyPi85epdxDGT2A0DArBgNV
+            HSMEJDAigCAX8xYlNMJ3OgNSgMJkv54684UP/oYF5l50JERznOy4VjBXBggqAwQF
+            BgcIAQRLeyJhdHRycyI6eyJoZi5BZmZpbGlhdGlvbiI6IiIsImhmLkVucm9sbG1l
+            bnRJRCI6ImFkbWluIiwiaGYuVHlwZSI6ImFkbWluIn19MAoGCCqGSM49BAMCA0gA
+            MEUCIQDjdYo5rXl2bGgUVGjOeSsrF0/tlMP/EbNbzqpQ57t/RQIgUK6xFBwsQAum
+            +aGuZmTGmGfFtI5+M0XmOrJK0Je0Uec=
+            -----END CERTIFICATE-----
+            
+        clientPrivateKey:
+          pem: |
+            -----BEGIN PRIVATE KEY-----
+            MIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQghQ/kF65YX3vcywZn
+            Cv0Pvi9NnDhk6Jw5AMGR4rB7YVihRANCAAQBBdF7C78E7qNvc2Zdbu5dVhG/sMIz
+            5SGESNuQBBBw/OR7/JMDr8Sypr2HFxyi6HC5ZO/TqP+yhJHmLxEl+qtd
+            -----END PRIVATE KEY-----
+            
+    connectionProfile:
+      path: ./org3.yaml
+  - mspid: Org4MSP
+    identities:
+      certificates:
+      - name: admin
+        clientSignedCert:
+          pem: |
+            -----BEGIN CERTIFICATE-----
+            MIICUzCCAfmgAwIBAgIUC51AqcHEZJm05R5r6WoEPH8mSr8wCgYIKoZIzj0EAwIw
+            ajELMAkGA1UEBhMCRVMxETAPBgNVBAcTCEFsaWNhbnRlMREwDwYDVQQJEwhBbGlj
+            YW50ZTEZMBcGA1UEChMQS3VuZyBGdSBTb2Z0d2FyZTENMAsGA1UECxMEVGVjaDEL
+            MAkGA1UEAxMCY2EwHhcNMjUwMzI1MTg0NTU5WhcNMjYwMzI2MjAyNTAwWjAgMQ4w
+            DAYDVQQLEwVhZG1pbjEOMAwGA1UEAxMFYWRtaW4wWTATBgcqhkjOPQIBBggqhkjO
+            PQMBBwNCAARbAgZJbev8MgZhovzLyO+zEbo0i3uR3ZQ/xljIQYpuPvo9Mry4JfgR
+            I8q8VE9EMnvt/zHBNa4ChjfA1z+mZfQ8o4HGMIHDMA4GA1UdDwEB/wQEAwIHgDAM
+            BgNVHRMBAf8EAjAAMB0GA1UdDgQWBBQFrOm1DHB8iwEtabs1QDxlnQEu4DArBgNV
+            HSMEJDAigCCDwNuXqroE2PdeJHzCnu77ukomZR32tYErcab1trs6KDBXBggqAwQF
+            BgcIAQRLeyJhdHRycyI6eyJoZi5BZmZpbGlhdGlvbiI6IiIsImhmLkVucm9sbG1l
+            bnRJRCI6ImFkbWluIiwiaGYuVHlwZSI6ImFkbWluIn19MAoGCCqGSM49BAMCA0gA
+            MEUCIQC2z2v9tFOwcH2rIkpizB/UvNj4D77cXMvxRt8xZui0WwIgDo6RRrLmsQiB
+            ULTEabmRmHOfmg8pO8N0v9ypYm31/FI=
+            -----END CERTIFICATE-----
+            
+        clientPrivateKey:
+          pem: |
+            -----BEGIN PRIVATE KEY-----
+            MIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgqP3x+0Ou4JhGjcJ6
+            a9NHXrNyE17xS4zcguV1yTo5DlGhRANCAARbAgZJbev8MgZhovzLyO+zEbo0i3uR
+            3ZQ/xljIQYpuPvo9Mry4JfgRI8q8VE9EMnvt/zHBNa4ChjfA1z+mZfQ8
+            -----END PRIVATE KEY-----
+            
+    connectionProfile:
+      path: ./org4.yaml
+  - mspid: Org5MSP
+    identities:
+      certificates:
+      - name: admin
+        clientSignedCert:
+          pem: |
+            -----BEGIN CERTIFICATE-----
+            MIICUzCCAfmgAwIBAgIUNuMQArI95yW0FOvbScLUQ+pBuO8wCgYIKoZIzj0EAwIw
+            ajELMAkGA1UEBhMCRVMxETAPBgNVBAcTCEFsaWNhbnRlMREwDwYDVQQJEwhBbGlj
+            YW50ZTEZMBcGA1UEChMQS3VuZyBGdSBTb2Z0d2FyZTENMAsGA1UECxMEVGVjaDEL
+            MAkGA1UEAxMCY2EwHhcNMjUwMzI1MTg1MTQ0WhcNMjYwMzI2MjAyNTAwWjAgMQ4w
+            DAYDVQQLEwVhZG1pbjEOMAwGA1UEAxMFYWRtaW4wWTATBgcqhkjOPQIBBggqhkjO
+            PQMBBwNCAATnJgl8RpWID2fyDyPKyKxPCRnCMW7bylLw5J733EAZR0wHECgkYdLI
+            cAjFKR5tfs5qaqWtQslmXbwcvGvFf3v+o4HGMIHDMA4GA1UdDwEB/wQEAwIHgDAM
+            BgNVHRMBAf8EAjAAMB0GA1UdDgQWBBROgUzyQlyyVQjmbxziB4zUpnQO7DArBgNV
+            HSMEJDAigCBbO0Bhs67aqQF0cZ16PM/yHbNlC6KzZQow7YUhPPXePTBXBggqAwQF
+            BgcIAQRLeyJhdHRycyI6eyJoZi5BZmZpbGlhdGlvbiI6IiIsImhmLkVucm9sbG1l
+            bnRJRCI6ImFkbWluIiwiaGYuVHlwZSI6ImFkbWluIn19MAoGCCqGSM49BAMCA0gA
+            MEUCIQDnYB63bNEQ/SUWLvYUbUPts3Vk8KkwgoXFGlNMHf/6WgIgLzF/SZSJncvg
+            W4HAbXQDX5lWtNA5UyEyqlNFUJigSF8=
+            -----END CERTIFICATE-----
+            
+        clientPrivateKey:
+          pem: |
+            -----BEGIN PRIVATE KEY-----
+            MIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgZJIDHyjrcN7uUeCb
+            BgurwmM2pdKoxnsR7sDvz+C2MVShRANCAATnJgl8RpWID2fyDyPKyKxPCRnCMW7b
+            ylLw5J733EAZR0wHECgkYdLIcAjFKR5tfs5qaqWtQslmXbwcvGvFf3v+
+            -----END PRIVATE KEY-----
+            
+    connectionProfile:
+      path: ./org5.yaml
+  - mspid: Org6MSP
+    identities:
+      certificates:
+      - name: admin
+        clientSignedCert:
+          pem: |
+            -----BEGIN CERTIFICATE-----
+            MIICUzCCAfmgAwIBAgIUMzp7iYi44jvD4+OoZuncaMfeNlgwCgYIKoZIzj0EAwIw
+            ajELMAkGA1UEBhMCRVMxETAPBgNVBAcTCEFsaWNhbnRlMREwDwYDVQQJEwhBbGlj
+            YW50ZTEZMBcGA1UEChMQS3VuZyBGdSBTb2Z0d2FyZTENMAsGA1UECxMEVGVjaDEL
+            MAkGA1UEAxMCY2EwHhcNMjUwMzI2MDY1OTI3WhcNMjYwMzI3MTQwMDAwWjAgMQ4w
+            DAYDVQQLEwVhZG1pbjEOMAwGA1UEAxMFYWRtaW4wWTATBgcqhkjOPQIBBggqhkjO
+            PQMBBwNCAASECME1P9uIJn+o+uR+d02BHJ0e4hTwCO1EQhRS0lMLuenMJG6CsFWI
+            oWpP1zTwXISjBX3vuZH4oW1fhqTThXVSo4HGMIHDMA4GA1UdDwEB/wQEAwIHgDAM
+            BgNVHRMBAf8EAjAAMB0GA1UdDgQWBBQ6/V3s9aWa/hiJEqfon57vZsVNDDArBgNV
+            HSMEJDAigCCMlAyPiuJVxyk5jiXV9RKaIPItF1vhwzyl4w1VSMGvBjBXBggqAwQF
+            BgcIAQRLeyJhdHRycyI6eyJoZi5BZmZpbGlhdGlvbiI6IiIsImhmLkVucm9sbG1l
+            bnRJRCI6ImFkbWluIiwiaGYuVHlwZSI6ImFkbWluIn19MAoGCCqGSM49BAMCA0gA
+            MEUCIQCj/9mFLI2qNVxwWl7DqKTy56n9Ab2f8J+EIv50ClRk7AIgQRZ8ug/RIJ3A
+            8uzDpgcwrLkCdI6Ab6xLR08VS98U12I=
+            -----END CERTIFICATE-----
+            
+        clientPrivateKey:
+          pem: |
+            -----BEGIN PRIVATE KEY-----
+            MIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQguOmKRyCJJExjhvey
+            TMORH2xHTbCL2uhTX71xDML+oZehRANCAASECME1P9uIJn+o+uR+d02BHJ0e4hTw
+            CO1EQhRS0lMLuenMJG6CsFWIoWpP1zTwXISjBX3vuZH4oW1fhqTThXVS
+            -----END PRIVATE KEY-----
+            
+    connectionProfile:
+      path: ./org6.yaml
+  - mspid: Org7MSP
+    identities:
+      certificates:
+      - name: admin
+        clientSignedCert:
+          pem: |
+            -----BEGIN CERTIFICATE-----
+            MIICUzCCAfmgAwIBAgIUHThvWNj9hjdNJIHpolWvJ6suHEMwCgYIKoZIzj0EAwIw
+            ajELMAkGA1UEBhMCRVMxETAPBgNVBAcTCEFsaWNhbnRlMREwDwYDVQQJEwhBbGlj
+            YW50ZTEZMBcGA1UEChMQS3VuZyBGdSBTb2Z0d2FyZTENMAsGA1UECxMEVGVjaDEL
+            MAkGA1UEAxMCY2EwHhcNMjUwMzI2MDcwNTExWhcNMjYwMzI3MTQwMTAwWjAgMQ4w
+            DAYDVQQLEwVhZG1pbjEOMAwGA1UEAxMFYWRtaW4wWTATBgcqhkjOPQIBBggqhkjO
+            PQMBBwNCAATwGuw48B6Nco4DU5kFdoBmMk+6rVeq5m39dPK0fXV/BWprqefNz6zi
+            qMqlr3AzP7ZQpPO/g6ttg0GhtaYifNpWo4HGMIHDMA4GA1UdDwEB/wQEAwIHgDAM
+            BgNVHRMBAf8EAjAAMB0GA1UdDgQWBBQ2PYlESCsQMKJFfWW/Q6ucoptKrzArBgNV
+            HSMEJDAigCDu54C3XwfUJQhZ6tHnXBJj7q7X5EFXAOeDwmtXIvgx7jBXBggqAwQF
+            BgcIAQRLeyJhdHRycyI6eyJoZi5BZmZpbGlhdGlvbiI6IiIsImhmLkVucm9sbG1l
+            bnRJRCI6ImFkbWluIiwiaGYuVHlwZSI6ImFkbWluIn19MAoGCCqGSM49BAMCA0gA
+            MEUCIQCEk1ua3uXB3eGk6/M2IzaWm0DyVOuZDNjPUeaiHuA1JgIgLyq2MntQpi7h
+            dUGeFv5XGux2wGjEeNxP7O8nDMV1z1Q=
+            -----END CERTIFICATE-----
+            
+        clientPrivateKey:
+          pem: |
+            -----BEGIN PRIVATE KEY-----
+            MIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgOQ0MmuQuvovoAj6L
+            luCRCNK7OqLZwukFspJdgn7+z9+hRANCAATwGuw48B6Nco4DU5kFdoBmMk+6rVeq
+            5m39dPK0fXV/BWprqefNz6ziqMqlr3AzP7ZQpPO/g6ttg0GhtaYifNpW
+            -----END PRIVATE KEY-----
+            
+    connectionProfile:
+      path: ./org7.yaml
+  - mspid: Org8MSP
+    identities:
+      certificates:
+      - name: admin
+        clientSignedCert:
+          pem: |
+            -----BEGIN CERTIFICATE-----
+            MIICUzCCAfmgAwIBAgIUPhj1h66MauOBb0THcTZAVsh8MEgwCgYIKoZIzj0EAwIw
+            ajELMAkGA1UEBhMCRVMxETAPBgNVBAcTCEFsaWNhbnRlMREwDwYDVQQJEwhBbGlj
+            YW50ZTEZMBcGA1UEChMQS3VuZyBGdSBTb2Z0d2FyZTENMAsGA1UECxMEVGVjaDEL
+            MAkGA1UEAxMCY2EwHhcNMjUwMzI2MDcxMDU2WhcNMjYwMzI3MTQwMTAwWjAgMQ4w
+            DAYDVQQLEwVhZG1pbjEOMAwGA1UEAxMFYWRtaW4wWTATBgcqhkjOPQIBBggqhkjO
+            PQMBBwNCAARj/L6zfL2a1iY9BzoIScbSCDPo84AJUBh9yjtp9omAqtwd0juQeHMp
+            JzbUbrY5tsA1jI3M6YGjR1edq662s9sOo4HGMIHDMA4GA1UdDwEB/wQEAwIHgDAM
+            BgNVHRMBAf8EAjAAMB0GA1UdDgQWBBTScp65AHF9F2sDrl8krD/GRJIHsDArBgNV
+            HSMEJDAigCCAGdvrOtQ6u+1qC4tlRYxZe+Fg9KnMp6CABahE1F7SljBXBggqAwQF
+            BgcIAQRLeyJhdHRycyI6eyJoZi5BZmZpbGlhdGlvbiI6IiIsImhmLkVucm9sbG1l
+            bnRJRCI6ImFkbWluIiwiaGYuVHlwZSI6ImFkbWluIn19MAoGCCqGSM49BAMCA0gA
+            MEUCIQDJkmKbK+A303J0A8KEQnWTqB8/II4JjYUTCVohBjeRzgIgEYC98XT0AFsk
+            CbtN0WbQfYfw5c9hnJ0XDtQ4rynY1W0=
+            -----END CERTIFICATE-----
+            
+        clientPrivateKey:
+          pem: |
+            -----BEGIN PRIVATE KEY-----
+            MIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgeXthebVq5EnoJFk6
+            qmOIMTix7NE+TZXDJ24xa/t4PzOhRANCAARj/L6zfL2a1iY9BzoIScbSCDPo84AJ
+            UBh9yjtp9omAqtwd0juQeHMpJzbUbrY5tsA1jI3M6YGjR1edq662s9sO
+            -----END PRIVATE KEY-----
+            
+    connectionProfile:
+      path: ./org8.yaml
+  - mspid: Org9MSP
+    identities:
+      certificates:
+      - name: admin
+        clientSignedCert:
+          pem: |
+            -----BEGIN CERTIFICATE-----
+            MIICUzCCAfmgAwIBAgIUanKcwCb2bFObkPHCrLKmxCrZnt4wCgYIKoZIzj0EAwIw
+            ajELMAkGA1UEBhMCRVMxETAPBgNVBAcTCEFsaWNhbnRlMREwDwYDVQQJEwhBbGlj
+            YW50ZTEZMBcGA1UEChMQS3VuZyBGdSBTb2Z0d2FyZTENMAsGA1UECxMEVGVjaDEL
+            MAkGA1UEAxMCY2EwHhcNMjUwMzI2MDcxNjQxWhcNMjYwMzI3MTQwMTAwWjAgMQ4w
+            DAYDVQQLEwVhZG1pbjEOMAwGA1UEAxMFYWRtaW4wWTATBgcqhkjOPQIBBggqhkjO
+            PQMBBwNCAASquzty00IbD6IEa9LD+5g0Uf0/JP1ja60uraS0KVNFSAeJf8MTyVDG
+            Y3JtTuAvg5S7tESC56m7ZDncAHlTCXgUo4HGMIHDMA4GA1UdDwEB/wQEAwIHgDAM
+            BgNVHRMBAf8EAjAAMB0GA1UdDgQWBBQQAEk1i4jQ/UXAMRSaFstfJlBayTArBgNV
+            HSMEJDAigCDAyDr8EdCFWi4Z0QsLfQyqF2vyYqSamKeu/VJtqNVLFjBXBggqAwQF
+            BgcIAQRLeyJhdHRycyI6eyJoZi5BZmZpbGlhdGlvbiI6IiIsImhmLkVucm9sbG1l
+            bnRJRCI6ImFkbWluIiwiaGYuVHlwZSI6ImFkbWluIn19MAoGCCqGSM49BAMCA0gA
+            MEUCIQD+uyJEhG45hoMv4INjOZgnqusTwyrm5rKLoA/4fXg8/gIgPOKebzXZxuMP
+            LAyQp/N8VETzi+9XVCnolSpeO1PyAsg=
+            -----END CERTIFICATE-----
+            
+        clientPrivateKey:
+          pem: |
+            -----BEGIN PRIVATE KEY-----
+            MIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgTSep+GpASdD0MDN+
+            xm4BvkUbAGZRzDjECYELSyKDVOShRANCAASquzty00IbD6IEa9LD+5g0Uf0/JP1j
+            a60uraS0KVNFSAeJf8MTyVDGY3JtTuAvg5S7tESC56m7ZDncAHlTCXgU
+            -----END PRIVATE KEY-----
+            
+    connectionProfile:
+      path: ./org9.yaml
+  - mspid: Org10MSP
+    identities:
+      certificates:
+      - name: admin
+        clientSignedCert:
+          pem: |
+            -----BEGIN CERTIFICATE-----
+            MIICUjCCAfmgAwIBAgIUeacW8h+tf1MPLBQhN7d44IEGIQMwCgYIKoZIzj0EAwIw
+            ajELMAkGA1UEBhMCRVMxETAPBgNVBAcTCEFsaWNhbnRlMREwDwYDVQQJEwhBbGlj
+            YW50ZTEZMBcGA1UEChMQS3VuZyBGdSBTb2Z0d2FyZTENMAsGA1UECxMEVGVjaDEL
+            MAkGA1UEAxMCY2EwHhcNMjUwMzI2MDcyMjI2WhcNMjYwMzI3MTQwMTAwWjAgMQ4w
+            DAYDVQQLEwVhZG1pbjEOMAwGA1UEAxMFYWRtaW4wWTATBgcqhkjOPQIBBggqhkjO
+            PQMBBwNCAAQb1vrJnjEeNgsn0pcfVHAMIzyWpKHtNIoZYMklf4maD2k1tX6E2Ten
+            rRoqB7n+9xuSw+JUzxRNqmTI7TAAvFgLo4HGMIHDMA4GA1UdDwEB/wQEAwIHgDAM
+            BgNVHRMBAf8EAjAAMB0GA1UdDgQWBBTrcmJgv8iII0DZK7z94llZlQpxvjArBgNV
+            HSMEJDAigCA9oXIdW0zMotERfn3ol84oI7BgrpHdceqe5VnOrVV6tDBXBggqAwQF
+            BgcIAQRLeyJhdHRycyI6eyJoZi5BZmZpbGlhdGlvbiI6IiIsImhmLkVucm9sbG1l
+            bnRJRCI6ImFkbWluIiwiaGYuVHlwZSI6ImFkbWluIn19MAoGCCqGSM49BAMCA0cA
+            MEQCIA9kMUlrQ3xWTGRKr7Wdp8NiMe6qODIa4l3FQWnee8sCAiATvnL5wW10PY2r
+            cMnNowqkl6NcRaXzCccGLEN5glZnHQ==
+            -----END CERTIFICATE-----
+            
+        clientPrivateKey:
+          pem: |
+            -----BEGIN PRIVATE KEY-----
+            MIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgWXbIvg1ZxdZYgrq4
+            ED+87dENqyawBNQ/ceAE3ljFoLShRANCAAQb1vrJnjEeNgsn0pcfVHAMIzyWpKHt
+            NIoZYMklf4maD2k1tX6E2TenrRoqB7n+9xuSw+JUzxRNqmTI7TAAvFgL
+            -----END PRIVATE KEY-----
+            
+    connectionProfile:
+      path: ./org10.yaml

@@ -1,0 +1,44 @@
+﻿name: Caliper Benchmarks
+version: "2.0.0"
+
+caliper:
+  blockchain: fabric
+
+channels:
+  - channelName: demoraftorg1ord1
+    contracts:
+    - id: graph5
+
+organizations:
+  - mspid: Org1MSP
+    identities:
+      certificates:
+      - name: admin
+        clientSignedCert:
+          pem: |
+            -----BEGIN CERTIFICATE-----
+            MIICUzCCAfmgAwIBAgIUJViOkjdhFNytdvKkJVLeYhSLtzIwCgYIKoZIzj0EAwIw
+            ajELMAkGA1UEBhMCRVMxETAPBgNVBAcTCEFsaWNhbnRlMREwDwYDVQQJEwhBbGlj
+            YW50ZTEZMBcGA1UEChMQS3VuZyBGdSBTb2Z0d2FyZTENMAsGA1UECxMEVGVjaDEL
+            MAkGA1UEAxMCY2EwHhcNMjUwNDEwMTcwOTQyWhcNMjYwNDExMTk1MjAwWjAgMQ4w
+            DAYDVQQLEwVhZG1pbjEOMAwGA1UEAxMFYWRtaW4wWTATBgcqhkjOPQIBBggqhkjO
+            PQMBBwNCAATvMnm734a4bbMwPpiApQkcuKY2DQi7/qlFnRY2gGZlhTsnHirKAFih
+            WYGlssnpFrjOIBbOko4Vy4sDzTigydX4o4HGMIHDMA4GA1UdDwEB/wQEAwIHgDAM
+            BgNVHRMBAf8EAjAAMB0GA1UdDgQWBBRIeHnvEk7ECo/GhZMg/zsBeVkm4DArBgNV
+            HSMEJDAigCD9h1eqGoOlFU8LK2rQSQ+fi/ZcoHDgwkugvB9KRwAzgTBXBggqAwQF
+            BgcIAQRLeyJhdHRycyI6eyJoZi5BZmZpbGlhdGlvbiI6IiIsImhmLkVucm9sbG1l
+            bnRJRCI6ImFkbWluIiwiaGYuVHlwZSI6ImFkbWluIn19MAoGCCqGSM49BAMCA0gA
+            MEUCIQDbpKiJhEkyvF55syuc9RyefIld2AYMDF3zVpIl43lcgQIgdnyMXYEWp6Vf
+            VHneo5NBGoozWsELkBbrvPEu080sEWA=
+            -----END CERTIFICATE-----
+            
+        clientPrivateKey:
+          pem: |
+            -----BEGIN PRIVATE KEY-----
+            MIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgSSiiKXJlBM9nS0vz
+            1DY5XkSvRZRrKwxFC7qucvxOMN+hRANCAATvMnm734a4bbMwPpiApQkcuKY2DQi7
+            /qlFnRY2gGZlhTsnHirKAFihWYGlssnpFrjOIBbOko4Vy4sDzTigydX4
+            -----END PRIVATE KEY-----
+            
+    connectionProfile:
+      path: ./org1.yaml

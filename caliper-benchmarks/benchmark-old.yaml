@@ -1,0 +1,28 @@
+test:
+    name: basic-contract-benchmark
+    description: test benchmark
+    workers:
+      number: 1
+    rounds:
+      - label: updatePermissions
+        description: Read asset benchmark
+        txDuration: 10
+        rateControl:
+          type: fixed-load
+          opts:
+            transactionLoad: 10
+        workload:
+          module: updatePermissions.js
+          arguments:
+            contractId: graph4      
+      - label: getEffectivePermission
+        description: Read asset benchmark
+        txDuration: 10
+        rateControl:
+          type: fixed-load
+          opts:
+            transactionLoad: 10
+        workload:
+          module: getEffectivePermission.js
+          arguments:
+            contractId: graph4

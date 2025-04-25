@@ -1,0 +1,47 @@
+name: Caliper Benchmarks
+version: "2.0.0"
+
+caliper:
+  blockchain: fabric
+
+channels:
+  # channelName of mychannel matches the name of the channel created by test network
+  - channelName: demoraft
+    # the chaincodeIDs of all the fabric chaincodes in caliper-benchmarks
+    contracts:
+    - id: graph4
+
+organizations:
+  - mspid: Org1MSP
+    # Identities come from cryptogen created material for test-network
+    identities:
+      certificates:
+      - name: admin
+        clientSignedCert:
+          pem: |
+            -----BEGIN CERTIFICATE-----
+            MIICUzCCAfmgAwIBAgIUT+Naw+ILD6k8uU+2yImAQ3E3lNkwCgYIKoZIzj0EAwIw
+            ajELMAkGA1UEBhMCRVMxETAPBgNVBAcTCEFsaWNhbnRlMREwDwYDVQQJEwhBbGlj
+            YW50ZTEZMBcGA1UEChMQS3VuZyBGdSBTb2Z0d2FyZTENMAsGA1UECxMEVGVjaDEL
+            MAkGA1UEAxMCY2EwHhcNMjUwMzEwMTM1MTE0WhcNMjYwMzE2MTcyOTAwWjAgMQ4w
+            DAYDVQQLEwVhZG1pbjEOMAwGA1UEAxMFYWRtaW4wWTATBgcqhkjOPQIBBggqhkjO
+            PQMBBwNCAAS+nvb/aR/gFoToT/NQpRsdHcQh6rjPsqzNVOROzhNpAG7HpylzQRsw
+            j7TD5fSwdmLBC1rJKzMK8LTyk5BPvT5bo4HGMIHDMA4GA1UdDwEB/wQEAwIHgDAM
+            BgNVHRMBAf8EAjAAMB0GA1UdDgQWBBTuCfqNjz9jwllDv1GLCwnYgrv/zjArBgNV
+            HSMEJDAigCDB0DD1BfadSaFEhmYbOBFDXfam4JHsPsW/Fd1DOMIq6zBXBggqAwQF
+            BgcIAQRLeyJhdHRycyI6eyJoZi5BZmZpbGlhdGlvbiI6IiIsImhmLkVucm9sbG1l
+            bnRJRCI6ImFkbWluIiwiaGYuVHlwZSI6ImFkbWluIn19MAoGCCqGSM49BAMCA0gA
+            MEUCIQC8Gvz2PiCRFcdDRsvf1Ra7jb5JVypRKrpggExpGBXhaAIgFwUmzRgRbi03
+            5zHPQWHumV0phpQJ3ywz6ip03nLrvpI=
+            -----END CERTIFICATE-----
+        clientPrivateKey:
+          pem: |
+            -----BEGIN PRIVATE KEY-----
+            MIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgJja13mq7lth0al2j
+            mRd1o76XFBYe8ybFy6kW59T8L2+hRANCAAS+nvb/aR/gFoToT/NQpRsdHcQh6rjP
+            sqzNVOROzhNpAG7HpylzQRswj7TD5fSwdmLBC1rJKzMK8LTyk5BPvT5b
+            -----END PRIVATE KEY-----
+    connectionProfile:
+      path:         
+        './org1.yaml'
+#      discover: true

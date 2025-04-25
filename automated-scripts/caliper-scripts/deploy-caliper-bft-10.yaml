@@ -1,0 +1,58 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: caliper-bft-10
+  namespace: fabric
+spec:
+  backoffLimit: 0
+  template:
+    metadata:
+      name: caliper-pod-bft  # Stała nazwa poda
+    spec:
+      restartPolicy: Never
+
+      initContainers:
+      - name: download-files
+        image: alpine:3.18
+        command: ["sh", "-c"]
+        args:
+          - |
+            apk update &&
+            apk add --no-cache python3 py3-pip &&
+            pip install --no-cache-dir gdown &&
+            mkdir -p /data/generated_graphs &&
+            gdown --folder --id 1ZZT61NmqDFHDsaOLnPPazujSC37XoHLv -O /data/generated_graphs
+        volumeMounts:
+        - name: shared-data
+          mountPath: /data
+      containers:
+      - name: caliper
+        image: hyperledger/caliper:0.6.0
+        args: ["launch", "manager"]  # Używamy domyślnego entrypointu Calipera
+        env:
+        - name: CALIPER_BIND_SUT
+          value: "fabric:fabric-gateway"
+        - name: CALIPER_BENCHCONFIG
+          value: "benchmark.yaml"
+        - name: CALIPER_NETWORKCONFIG
+          value: "networkConfig.yaml"
+        - name: CALIPER_REPORT_PATH
+          value: "/hyperledger/caliper/reports/report.html"  # Ścieżka do folderu na raporty
+        volumeMounts:
+        - name: caliper-benchmarks-bft
+          mountPath: /hyperledger/caliper/workspace  # Montowanie lokalnego folderu
+        #- name: caliper-workspace
+        #  mountPath: /hyperledger/caliper/workspace/generated_graphs  # Montowanie dodatkowego PVC do workspace
+        - name: report-volume
+          mountPath: /hyperledger/caliper/reports  # Katalog do raportów
+        - name: shared-data
+          mountPath: /data
+      volumes:
+      - name: shared-data
+        emptyDir: {}  # Wspólny volume dla kontenerów
+      - name: caliper-benchmarks-bft
+        configMap:
+          name: caliper-benchmarks-bft-10
+      - name: report-volume
+        persistentVolumeClaim:
+          claimName: caliper-reports-pvc  # PVC dla raportów

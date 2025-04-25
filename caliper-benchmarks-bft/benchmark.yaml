@@ -1,0 +1,242 @@
+test:
+  name: basic-contract-benchmark
+  description: "Test benchmark for basic operations with varying load levels."
+  workers:
+    number: 4
+  rounds:
+    - label: updatePermissions_light_graph_1org_test
+      description: "Warm-up phase to stabilize system performance before main tests."
+      txDuration: 5
+      rateControl:
+        type: fixed-load
+        opts:
+          transactionLoad: 5
+      workload:
+        module: updatePermissions.js
+        arguments:
+          contractId: graph4bft
+          graphFile: '/data/generated_graphs/graph_1org_test.json'
+
+    - label: updatePermissions_stable
+      description: "Testing updatePermissions at moderate load (10 TPS) with a start delay to ensure zero failures."
+      txDuration: 10
+      rateControl:
+        type: fixed-load
+        opts:
+          transactionLoad: 10
+          startDelay: 5
+      workload:
+        module: updatePermissions.js
+        arguments:
+          contractId: graph4bft
+          graphFile: '/data/generated_graphs/graph_1org_test.json'
+
+    - label: updatePermissions_heavy
+      description: "Simulating heavy load conditions (50 TPS) for 60 seconds to stress the system and assess scalability."
+      txDuration: 60
+      rateControl:
+        type: fixed-load
+        opts:
+          transactionLoad: 50
+      workload:
+        module: updatePermissions.js
+        arguments:
+          contractId: graph4bft
+          graphFile: '/data/generated_graphs/graph_1org_test.json'
+
+    - label: getEffectivePermission_1
+      description: "Baseline performance test for retrieving effective permissions under low load (10 TPS)."
+      txDuration: 10
+      rateControl:
+        type: fixed-load
+        opts:
+          transactionLoad: 10
+      workload:
+        module: getEffectivePermission.js
+        arguments:
+          contractId: graph4bft
+          graphFile: '/data/generated_graphs/graph_1org_test.json'
+
+    - label: getEffectivePermission_2
+      description: "Performance test for retrieving effective permissions under moderate load (50 TPS)."
+      txDuration: 10
+      rateControl:
+        type: fixed-load
+        opts:
+          transactionLoad: 50
+      workload:
+        module: getEffectivePermission.js
+        arguments:
+          contractId: graph4bft
+          graphFile: '/data/generated_graphs/graph_1org_test.json'
+          
+    - label: getEffectivePermission_3
+      description: "Performance test for retrieving effective permissions under higher load (100 TPS)."
+      txDuration: 10
+      rateControl:
+        type: fixed-load
+        opts:
+          transactionLoad: 100
+      workload:
+        module: getEffectivePermission.js
+        arguments:
+          contractId: graph4bft
+          graphFile: '/data/generated_graphs/graph_1org_test.json'
+# graph_1org_100s-0.1.json
+    - label: updatePermissions_light_1org_100s
+      description: "Warm-up phase to stabilize system performance before main tests."
+      txDuration: 5
+      rateControl:
+        type: fixed-load
+        opts:
+          transactionLoad: 5
+      workload:
+        module: updatePermissions.js
+        arguments:
+          contractId: graph4bft
+          graphFile: '/data/generated_graphs/graph_1org_100s-0.1.json'
+
+    - label: updatePermissions_stable_1org_100s
+      description: "Testing updatePermissions at moderate load (10 TPS) with a start delay to ensure zero failures."
+      txDuration: 10
+      rateControl:
+        type: fixed-load
+        opts:
+          transactionLoad: 10
+          startDelay: 5
+      workload:
+        module: updatePermissions.js
+        arguments:
+          contractId: graph4bft
+          graphFile: '/data/generated_graphs/graph_1org_100s-0.1.json'
+
+    - label: updatePermissions_heavy_1org_100s
+      description: "Simulating heavy load conditions (50 TPS) for 60 seconds to stress the system and assess scalability."
+      txDuration: 60
+      rateControl:
+        type: fixed-load
+        opts:
+          transactionLoad: 50
+      workload:
+        module: updatePermissions.js
+        arguments:
+          contractId: graph4bft
+          graphFile: '/data/generated_graphs/graph_1org_100s-0.1.json'
+
+    - label: getEffectivePermission_1_1org_100s
+      description: "Baseline performance test for retrieving effective permissions under low load (10 TPS)."
+      txDuration: 10
+      rateControl:
+        type: fixed-load
+        opts:
+          transactionLoad: 10
+      workload:
+        module: getEffectivePermission.js
+        arguments:
+          contractId: graph4bft
+          graphFile: '/data/generated_graphs/graph_1org_100s-0.1.json'
+
+    - label: getEffectivePermission_2_1org_100s
+      description: "Performance test for retrieving effective permissions under moderate load (50 TPS)."
+      txDuration: 10
+      rateControl:
+        type: fixed-load
+        opts:
+          transactionLoad: 50
+      workload:
+        module: getEffectivePermission.js
+        arguments:
+          contractId: graph4bft
+          graphFile: '/data/generated_graphs/graph_1org_100s-0.1.json'
+          
+    - label: getEffectivePermission_3_1org_100s
+      description: "Performance test for retrieving effective permissions under higher load (100 TPS)."
+      txDuration: 10
+      rateControl:
+        type: fixed-load
+        opts:
+          transactionLoad: 100
+      workload:
+        module: getEffectivePermission.js
+        arguments:
+          contractId: graph4bft
+          graphFile: '/data/generated_graphs/graph_1org_100s-0.1.json'
+# graph_1org_200s-0.2.json
+    - label: updatePermissions_light_1org_200s
+      description: "Warm-up phase to stabilize system performance before main tests."
+      txDuration: 5
+      rateControl:
+        type: fixed-load
+        opts:
+          transactionLoad: 5
+      workload:
+        module: updatePermissions.js
+        arguments:
+          contractId: graph4bft
+          graphFile: '/data/generated_graphs/graph_1org_200s-0.2.json'
+
+    - label: updatePermissions_stable_1org_200s
+      description: "Testing updatePermissions at moderate load (10 TPS) with a start delay to ensure zero failures."
+      txDuration: 10
+      rateControl:
+        type: fixed-load
+        opts:
+          transactionLoad: 10
+          startDelay: 5
+      workload:
+        module: updatePermissions.js
+        arguments:
+          contractId: graph4bft
+          graphFile: '/data/generated_graphs/graph_1org_200s-0.2.json'
+
+    - label: updatePermissions_heavy_1org_100s
+      description: "Simulating heavy load conditions (50 TPS) for 60 seconds to stress the system and assess scalability."
+      txDuration: 60
+      rateControl:
+        type: fixed-load
+        opts:
+          transactionLoad: 50
+      workload:
+        module: updatePermissions.js
+        arguments:
+          contractId: graph4bft
+          graphFile: '/data/generated_graphs/graph_1org_100s-0.1.json'
+
+    - label: getEffectivePermission_1_1org_200s
+      description: "Baseline performance test for retrieving effective permissions under low load (10 TPS)."
+      txDuration: 10
+      rateControl:
+        type: fixed-load
+        opts:
+          transactionLoad: 10
+      workload:
+        module: getEffectivePermission.js
+        arguments:
+          contractId: graph4bft
+          graphFile: '/data/generated_graphs/graph_1org_200s-0.2.json'
+
+    - label: getEffectivePermission_2_1org_200s
+      description: "Performance test for retrieving effective permissions under moderate load (50 TPS)."
+      txDuration: 10
+      rateControl:
+        type: fixed-load
+        opts:
+          transactionLoad: 50
+      workload:
+        module: getEffectivePermission.js
+        arguments:
+          contractId: graph4bft
+          graphFile: '/data/generated_graphs/graph_1org_200s-0.2.json'
+          
+    - label: getEffectivePermission_3_1org_200s
+      description: "Performance test for retrieving effective permissions under higher load (100 TPS)."
+      txDuration: 10
+      rateControl:
+        type: fixed-load
+        opts:
+          transactionLoad: 100
+      workload:
+        module: getEffectivePermission.js
+        arguments:
+          contractId: graph4bft
+          graphFile: '/data/generated_graphs/graph_1org_200s-0.2.json'

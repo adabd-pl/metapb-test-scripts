@@ -1,0 +1,588 @@
+<!doctype html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<script>
+    function plotChart(divId, chartData) {
+        // Convert from stringified html, to valid JSON
+        const chartDetails = JSON.parse(chartData.replace(/&quot;/g,'"'));
+        new Chart(document.getElementById(divId), {
+            type: chartDetails.type,
+            data: {
+                labels: chartDetails.labels,
+                datasets: chartDetails.datasets
+            },
+            options: {
+                legend: { display: chartDetails.legend },
+                title: {
+                    display: true,
+                    text: chartDetails.title
+                }
+            }
+        });
+    }
+</script>
+<html>
+<head>
+    <title>Hyperledger Caliper Report</title>
+    <meta charset="UTF-8"/>
+    <style type="text/css">
+        .left-column {
+            position: fixed;
+            width:20%;
+        }
+        .left-column ul {
+            display: block;
+            padding: 0;
+            list-style: none;
+            border-bottom: 1px solid #d9d9d9;
+            font-size: 14px;
+        }
+        .left-column h2{
+            font-size: 24px;
+            font-weight: 400;
+            margin-block-end: 0.5em;
+        }
+        .left-column h3{
+            font-size: 18px;
+            font-weight: 400;
+            margin-block-end: 0.5em;
+        }
+        .left-column li{
+            margin-left: 10px;
+            margin-bottom: 5px;
+            color: #5e6b73;
+        }
+        .right-column {
+            margin-left: 22%;
+            width:60%;
+        }
+        .right-column table {
+            font-size:11px;
+            color:#333333;
+            border-width: 1px;
+            border-color: #666666;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+        }
+        .right-column h2{
+            font-weight: 400;
+        }
+        .right-column h3{
+            font-weight: 400;
+        }
+        .right-column h4 {
+            font-weight: 400;
+            margin-block-end: 0;
+        }
+        .right-column th {
+            border-width: 1px;
+            font-size: small;
+            padding: 8px;
+            border-style: solid;
+            border-color: #666666;
+            background-color: #f2f2f2;
+        }
+        .right-column td {
+            border-width: 1px;
+            font-size: small;
+            padding: 8px;
+            border-style: solid;
+            border-color: #666666;
+            background-color: #ffffff;
+            font-weight: 400;
+        }
+        .tag {
+            margin-bottom: 10px;
+            padding: 5px 10px;
+        }
+        pre {
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            -khtml-border-radius: 5px;
+            overflow:auto;
+            max-height:300px;
+            font-size:12px;
+        }
+        .charting {
+            display:flex;
+            flex-direction:row;
+            flex-wrap: wrap;
+            page-break-inside: auto;
+        }
+        .chart {
+            display:flex;
+            flex:1;
+            max-width: 50%;
+        }
+    </style>
+</head>
+<body style="font-family: IBM Plex Sans; font-weight: 200;">
+    <main>
+        <div class="left-column">
+            <img src="https://hyperledger.github.io/caliper/assets/img/hyperledger_caliper_logo_color.png" style="width:95%;" alt="">
+            <ul>
+                <h3>&nbspBasic information</h3>
+                <li>DLT: &nbsp<span style="font-weight: 500;">fabric</span></li>
+                <li>Name: &nbsp<span style="font-weight: 500;">basic-contract-benchmark</span></li>
+                <li>Description: &nbsp<span style="font-weight: 500;">Test benchmark for basic operations with varying load levels.</span></li>
+                <li>Benchmark Rounds: &nbsp<span style="font-weight: 500;">12</span></li>
+                <li><a href="#benchmarkInfo">Details</a></li>
+            </ul>
+            <ul>
+                <h3>&nbspBenchmark results</h3>
+                <li><a href="#benchmarksummary">Summary</a></li>
+                    <li><a href="#updatePermissions_light_graph_1org_test">updatePermissions_light_graph_1org_test</a></li>
+                    <li><a href="#updatePermissions_stable">updatePermissions_stable</a></li>
+                    <li><a href="#getEffectivePermission_1">getEffectivePermission_1</a></li>
+                    <li><a href="#getEffectivePermission_2">getEffectivePermission_2</a></li>
+                    <li><a href="#getEffectivePermission_3">getEffectivePermission_3</a></li>
+                    <li><a href="#updatePermissions_light_1org_100s">updatePermissions_light_1org_100s</a></li>
+                    <li><a href="#updatePermissions_stable_1org_100s">updatePermissions_stable_1org_100s</a></li>
+                    <li><a href="#getEffectivePermission_1_1org_100s">getEffectivePermission_1_1org_100s</a></li>
+                    <li><a href="#getEffectivePermission_2_1org_100s">getEffectivePermission_2_1org_100s</a></li>
+                    <li><a href="#getEffectivePermission_3_1org_100s">getEffectivePermission_3_1org_100s</a></li>
+            </ul>
+            <ul>
+                <h3>&nbspSystem under test</h3>
+                <li><a href="#sutdetails">Details</a></li>
+            </ul>
+        </div>
+
+        <div class="right-column">
+            <h1 style="padding-top: 3em; font-weight: 500;">Caliper report</h1>
+            <div style="border-bottom: 1px solid #d9d9d9; margin-bottom: 10px;" id="benchmarksummary">
+                <table style="min-width: 100%;">
+                    <h3>Summary of performance metrics</h3>
+                    <tr>
+                         <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate (TPS)</th> <th>Max Latency (s)</th> <th>Min Latency (s)</th> <th>Avg Latency (s)</th> <th>Throughput (TPS)</th>
+                    </tr>
+
+                    <tr>
+                         <td>updatePermissions_light_graph_1org_test</td> <td>13</td> <td>14</td> <td>4.3</td> <td>2.31</td> <td>1.14</td> <td>1.75</td> <td>3.1</td>
+                    </tr>
+                    <tr>
+                         <td>updatePermissions_stable</td> <td>68</td> <td>70</td> <td>14.0</td> <td>2.05</td> <td>0.13</td> <td>0.59</td> <td>12.3</td>
+                    </tr>
+                    <tr>
+                         <td>getEffectivePermission_1</td> <td>2288</td> <td>0</td> <td>248.5</td> <td>0.08</td> <td>0.01</td> <td>0.03</td> <td>248.2</td>
+                    </tr>
+                    <tr>
+                         <td>getEffectivePermission_2</td> <td>3041</td> <td>0</td> <td>326.1</td> <td>0.17</td> <td>0.01</td> <td>0.09</td> <td>325.7</td>
+                    </tr>
+                    <tr>
+                         <td>getEffectivePermission_3</td> <td>3218</td> <td>0</td> <td>343.1</td> <td>0.34</td> <td>0.01</td> <td>0.17</td> <td>342.7</td>
+                    </tr>
+                    <tr>
+                         <td>updatePermissions_light_1org_100s</td> <td>27</td> <td>1</td> <td>5.8</td> <td>2.12</td> <td>0.12</td> <td>1.18</td> <td>5.0</td>
+                    </tr>
+                    <tr>
+                         <td>updatePermissions_stable_1org_100s</td> <td>106</td> <td>2</td> <td>10.9</td> <td>2.13</td> <td>0.13</td> <td>0.71</td> <td>9.7</td>
+                    </tr>
+                    <tr>
+                         <td>getEffectivePermission_1_1org_100s</td> <td>2400</td> <td>0</td> <td>260.5</td> <td>0.11</td> <td>0.01</td> <td>0.03</td> <td>260.2</td>
+                    </tr>
+                    <tr>
+                         <td>getEffectivePermission_2_1org_100s</td> <td>2971</td> <td>0</td> <td>322.0</td> <td>0.20</td> <td>0.01</td> <td>0.09</td> <td>321.6</td>
+                    </tr>
+                    <tr>
+                         <td>getEffectivePermission_3_1org_100s</td> <td>3044</td> <td>0</td> <td>318.3</td> <td>0.34</td> <td>0.01</td> <td>0.19</td> <td>317.9</td>
+                    </tr>
+                </table>
+            </div>
+            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="updatePermissions_light_graph_1org_test">
+                <h2>Benchmark round: updatePermissions_light_graph_1org_test</h2>
+                <p>Warm-up phase to stabilize system performance before main tests.</p>
+                <pre style="overflow: visible;white-space: pre-wrap;max-height:100%;">txDuration: 5
+rateControl:
+  type: fixed-load
+  opts:
+    transactionLoad: 5
+</pre>
+                        <h3>Performance metrics for updatePermissions_light_graph_1org_test</h3>
+                            <table style="min-width: 100%;">
+                                <tr>
+                                     <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate (TPS)</th> <th>Max Latency (s)</th> <th>Min Latency (s)</th> <th>Avg Latency (s)</th> <th>Throughput (TPS)</th>
+                                </tr>
+                                <tr>
+                                     <td>updatePermissions_light_graph_1org_test</td> <td>13</td> <td>14</td> <td>4.3</td> <td>2.31</td> <td>1.14</td> <td>1.75</td> <td>3.1</td>
+                                </tr>
+                            </table>
+                        <h3>Resource utilization for updatePermissions_light_graph_1org_test</h3>
+            </div>
+
+            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="updatePermissions_stable">
+                <h2>Benchmark round: updatePermissions_stable</h2>
+                <p>Testing updatePermissions at moderate load (10 TPS) with a start delay to ensure zero failures.</p>
+                <pre style="overflow: visible;white-space: pre-wrap;max-height:100%;">txDuration: 10
+rateControl:
+  type: fixed-load
+  opts:
+    transactionLoad: 10
+    startDelay: 5
+</pre>
+                        <h3>Performance metrics for updatePermissions_stable</h3>
+                            <table style="min-width: 100%;">
+                                <tr>
+                                     <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate (TPS)</th> <th>Max Latency (s)</th> <th>Min Latency (s)</th> <th>Avg Latency (s)</th> <th>Throughput (TPS)</th>
+                                </tr>
+                                <tr>
+                                     <td>updatePermissions_stable</td> <td>68</td> <td>70</td> <td>14.0</td> <td>2.05</td> <td>0.13</td> <td>0.59</td> <td>12.3</td>
+                                </tr>
+                            </table>
+                        <h3>Resource utilization for updatePermissions_stable</h3>
+            </div>
+
+            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="getEffectivePermission_1">
+                <h2>Benchmark round: getEffectivePermission_1</h2>
+                <p>Baseline performance test for retrieving effective permissions under low load (10 TPS).</p>
+                <pre style="overflow: visible;white-space: pre-wrap;max-height:100%;">txDuration: 10
+rateControl:
+  type: fixed-load
+  opts:
+    transactionLoad: 10
+</pre>
+                        <h3>Performance metrics for getEffectivePermission_1</h3>
+                            <table style="min-width: 100%;">
+                                <tr>
+                                     <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate (TPS)</th> <th>Max Latency (s)</th> <th>Min Latency (s)</th> <th>Avg Latency (s)</th> <th>Throughput (TPS)</th>
+                                </tr>
+                                <tr>
+                                     <td>getEffectivePermission_1</td> <td>2288</td> <td>0</td> <td>248.5</td> <td>0.08</td> <td>0.01</td> <td>0.03</td> <td>248.2</td>
+                                </tr>
+                            </table>
+                        <h3>Resource utilization for getEffectivePermission_1</h3>
+            </div>
+
+            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="getEffectivePermission_2">
+                <h2>Benchmark round: getEffectivePermission_2</h2>
+                <p>Performance test for retrieving effective permissions under moderate load (50 TPS).</p>
+                <pre style="overflow: visible;white-space: pre-wrap;max-height:100%;">txDuration: 10
+rateControl:
+  type: fixed-load
+  opts:
+    transactionLoad: 50
+</pre>
+                        <h3>Performance metrics for getEffectivePermission_2</h3>
+                            <table style="min-width: 100%;">
+                                <tr>
+                                     <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate (TPS)</th> <th>Max Latency (s)</th> <th>Min Latency (s)</th> <th>Avg Latency (s)</th> <th>Throughput (TPS)</th>
+                                </tr>
+                                <tr>
+                                     <td>getEffectivePermission_2</td> <td>3041</td> <td>0</td> <td>326.1</td> <td>0.17</td> <td>0.01</td> <td>0.09</td> <td>325.7</td>
+                                </tr>
+                            </table>
+                        <h3>Resource utilization for getEffectivePermission_2</h3>
+            </div>
+
+            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="getEffectivePermission_3">
+                <h2>Benchmark round: getEffectivePermission_3</h2>
+                <p>Performance test for retrieving effective permissions under higher load (100 TPS).</p>
+                <pre style="overflow: visible;white-space: pre-wrap;max-height:100%;">txDuration: 10
+rateControl:
+  type: fixed-load
+  opts:
+    transactionLoad: 100
+</pre>
+                        <h3>Performance metrics for getEffectivePermission_3</h3>
+                            <table style="min-width: 100%;">
+                                <tr>
+                                     <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate (TPS)</th> <th>Max Latency (s)</th> <th>Min Latency (s)</th> <th>Avg Latency (s)</th> <th>Throughput (TPS)</th>
+                                </tr>
+                                <tr>
+                                     <td>getEffectivePermission_3</td> <td>3218</td> <td>0</td> <td>343.1</td> <td>0.34</td> <td>0.01</td> <td>0.17</td> <td>342.7</td>
+                                </tr>
+                            </table>
+                        <h3>Resource utilization for getEffectivePermission_3</h3>
+            </div>
+
+            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="updatePermissions_light_1org_100s">
+                <h2>Benchmark round: updatePermissions_light_1org_100s</h2>
+                <p>Warm-up phase to stabilize system performance before main tests.</p>
+                <pre style="overflow: visible;white-space: pre-wrap;max-height:100%;">txDuration: 5
+rateControl:
+  type: fixed-load
+  opts:
+    transactionLoad: 5
+</pre>
+                        <h3>Performance metrics for updatePermissions_light_1org_100s</h3>
+                            <table style="min-width: 100%;">
+                                <tr>
+                                     <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate (TPS)</th> <th>Max Latency (s)</th> <th>Min Latency (s)</th> <th>Avg Latency (s)</th> <th>Throughput (TPS)</th>
+                                </tr>
+                                <tr>
+                                     <td>updatePermissions_light_1org_100s</td> <td>27</td> <td>1</td> <td>5.8</td> <td>2.12</td> <td>0.12</td> <td>1.18</td> <td>5.0</td>
+                                </tr>
+                            </table>
+                        <h3>Resource utilization for updatePermissions_light_1org_100s</h3>
+            </div>
+
+            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="updatePermissions_stable_1org_100s">
+                <h2>Benchmark round: updatePermissions_stable_1org_100s</h2>
+                <p>Testing updatePermissions at moderate load (10 TPS) with a start delay to ensure zero failures.</p>
+                <pre style="overflow: visible;white-space: pre-wrap;max-height:100%;">txDuration: 10
+rateControl:
+  type: fixed-load
+  opts:
+    transactionLoad: 10
+    startDelay: 5
+</pre>
+                        <h3>Performance metrics for updatePermissions_stable_1org_100s</h3>
+                            <table style="min-width: 100%;">
+                                <tr>
+                                     <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate (TPS)</th> <th>Max Latency (s)</th> <th>Min Latency (s)</th> <th>Avg Latency (s)</th> <th>Throughput (TPS)</th>
+                                </tr>
+                                <tr>
+                                     <td>updatePermissions_stable_1org_100s</td> <td>106</td> <td>2</td> <td>10.9</td> <td>2.13</td> <td>0.13</td> <td>0.71</td> <td>9.7</td>
+                                </tr>
+                            </table>
+                        <h3>Resource utilization for updatePermissions_stable_1org_100s</h3>
+            </div>
+
+            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="getEffectivePermission_1_1org_100s">
+                <h2>Benchmark round: getEffectivePermission_1_1org_100s</h2>
+                <p>Baseline performance test for retrieving effective permissions under low load (10 TPS).</p>
+                <pre style="overflow: visible;white-space: pre-wrap;max-height:100%;">txDuration: 10
+rateControl:
+  type: fixed-load
+  opts:
+    transactionLoad: 10
+</pre>
+                        <h3>Performance metrics for getEffectivePermission_1_1org_100s</h3>
+                            <table style="min-width: 100%;">
+                                <tr>
+                                     <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate (TPS)</th> <th>Max Latency (s)</th> <th>Min Latency (s)</th> <th>Avg Latency (s)</th> <th>Throughput (TPS)</th>
+                                </tr>
+                                <tr>
+                                     <td>getEffectivePermission_1_1org_100s</td> <td>2400</td> <td>0</td> <td>260.5</td> <td>0.11</td> <td>0.01</td> <td>0.03</td> <td>260.2</td>
+                                </tr>
+                            </table>
+                        <h3>Resource utilization for getEffectivePermission_1_1org_100s</h3>
+            </div>
+
+            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="getEffectivePermission_2_1org_100s">
+                <h2>Benchmark round: getEffectivePermission_2_1org_100s</h2>
+                <p>Performance test for retrieving effective permissions under moderate load (50 TPS).</p>
+                <pre style="overflow: visible;white-space: pre-wrap;max-height:100%;">txDuration: 10
+rateControl:
+  type: fixed-load
+  opts:
+    transactionLoad: 50
+</pre>
+                        <h3>Performance metrics for getEffectivePermission_2_1org_100s</h3>
+                            <table style="min-width: 100%;">
+                                <tr>
+                                     <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate (TPS)</th> <th>Max Latency (s)</th> <th>Min Latency (s)</th> <th>Avg Latency (s)</th> <th>Throughput (TPS)</th>
+                                </tr>
+                                <tr>
+                                     <td>getEffectivePermission_2_1org_100s</td> <td>2971</td> <td>0</td> <td>322.0</td> <td>0.20</td> <td>0.01</td> <td>0.09</td> <td>321.6</td>
+                                </tr>
+                            </table>
+                        <h3>Resource utilization for getEffectivePermission_2_1org_100s</h3>
+            </div>
+
+            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="getEffectivePermission_3_1org_100s">
+                <h2>Benchmark round: getEffectivePermission_3_1org_100s</h2>
+                <p>Performance test for retrieving effective permissions under higher load (100 TPS).</p>
+                <pre style="overflow: visible;white-space: pre-wrap;max-height:100%;">txDuration: 10
+rateControl:
+  type: fixed-load
+  opts:
+    transactionLoad: 100
+</pre>
+                        <h3>Performance metrics for getEffectivePermission_3_1org_100s</h3>
+                            <table style="min-width: 100%;">
+                                <tr>
+                                     <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate (TPS)</th> <th>Max Latency (s)</th> <th>Min Latency (s)</th> <th>Avg Latency (s)</th> <th>Throughput (TPS)</th>
+                                </tr>
+                                <tr>
+                                     <td>getEffectivePermission_3_1org_100s</td> <td>3044</td> <td>0</td> <td>318.3</td> <td>0.34</td> <td>0.01</td> <td>0.19</td> <td>317.9</td>
+                                </tr>
+                            </table>
+                        <h3>Resource utilization for getEffectivePermission_3_1org_100s</h3>
+            </div>
+
+            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;">
+                <h2>Test Environment</h2>
+                <h3>benchmark config</h3>
+                <pre id="benchmarkInfo" style="overflow: visible;white-space: pre-wrap;max-height:100%;">name: basic-contract-benchmark
+description: Test benchmark for basic operations with varying load levels.
+workers:
+  number: 4
+rounds:
+  - label: updatePermissions_light_graph_1org_test
+    description: Warm-up phase to stabilize system performance before main tests.
+    txDuration: 5
+    rateControl:
+      type: fixed-load
+      opts:
+        transactionLoad: 5
+    workload:
+      module: updatePermissions.js
+      arguments:
+        contractId: graph4
+        graphFile: &#x2F;data&#x2F;generated_graphs&#x2F;graph_1org_test.json
+  - label: updatePermissions_stable
+    description: &gt;-
+      Testing updatePermissions at moderate load (10 TPS) with a start delay to
+      ensure zero failures.
+    txDuration: 10
+    rateControl:
+      type: fixed-load
+      opts:
+        transactionLoad: 10
+        startDelay: 5
+    workload:
+      module: updatePermissions.js
+      arguments:
+        contractId: graph4
+        graphFile: &#x2F;data&#x2F;generated_graphs&#x2F;graph_1org_test.json
+  - label: updatePermissions_heavy
+    description: &gt;-
+      Simulating heavy load conditions (50 TPS) for 60 seconds to stress the
+      system and assess scalability.
+    txDuration: 60
+    rateControl:
+      type: fixed-feedback
+      opts:
+        transactionLoad: 50
+    workload:
+      module: updatePermissions.js
+      arguments:
+        contractId: graph4
+        graphFile: &#x2F;data&#x2F;generated_graphs&#x2F;graph_1org_test.json
+  - label: getEffectivePermission_1
+    description: &gt;-
+      Baseline performance test for retrieving effective permissions under low
+      load (10 TPS).
+    txDuration: 10
+    rateControl:
+      type: fixed-load
+      opts:
+        transactionLoad: 10
+    workload:
+      module: getEffectivePermission.js
+      arguments:
+        contractId: graph4
+        graphFile: &#x2F;data&#x2F;generated_graphs&#x2F;graph_1org_test.json
+  - label: getEffectivePermission_2
+    description: &gt;-
+      Performance test for retrieving effective permissions under moderate load
+      (50 TPS).
+    txDuration: 10
+    rateControl:
+      type: fixed-load
+      opts:
+        transactionLoad: 50
+    workload:
+      module: getEffectivePermission.js
+      arguments:
+        contractId: graph4
+        graphFile: &#x2F;data&#x2F;generated_graphs&#x2F;graph_1org_test.json
+  - label: getEffectivePermission_3
+    description: &gt;-
+      Performance test for retrieving effective permissions under higher load
+      (100 TPS).
+    txDuration: 10
+    rateControl:
+      type: fixed-load
+      opts:
+        transactionLoad: 100
+    workload:
+      module: getEffectivePermission.js
+      arguments:
+        contractId: graph4
+        graphFile: &#x2F;data&#x2F;generated_graphs&#x2F;graph_1org_test.json
+  - label: updatePermissions_light_1org_100s
+    description: Warm-up phase to stabilize system performance before main tests.
+    txDuration: 5
+    rateControl:
+      type: fixed-load
+      opts:
+        transactionLoad: 5
+    workload:
+      module: updatePermissions.js
+      arguments:
+        contractId: graph4
+        graphFile: &#x2F;data&#x2F;generated_graphs&#x2F;graph_1org_100s-0.1.json
+  - label: updatePermissions_stable_1org_100s
+    description: &gt;-
+      Testing updatePermissions at moderate load (10 TPS) with a start delay to
+      ensure zero failures.
+    txDuration: 10
+    rateControl:
+      type: fixed-load
+      opts:
+        transactionLoad: 10
+        startDelay: 5
+    workload:
+      module: updatePermissions.js
+      arguments:
+        contractId: graph4
+        graphFile: &#x2F;data&#x2F;generated_graphs&#x2F;graph_1org_100s-0.1.json
+  - label: updatePermissions_heavy_1org_100s
+    description: &gt;-
+      Simulating heavy load conditions (50 TPS) for 60 seconds to stress the
+      system and assess scalability.
+    txDuration: 60
+    rateControl:
+      type: fixed-feedback
+      opts:
+        transactionLoad: 50
+    workload:
+      module: updatePermissions.js
+      arguments:
+        contractId: graph4
+        graphFile: &#x2F;data&#x2F;generated_graphs&#x2F;graph_1org_100s-0.1.json
+  - label: getEffectivePermission_1_1org_100s
+    description: &gt;-
+      Baseline performance test for retrieving effective permissions under low
+      load (10 TPS).
+    txDuration: 10
+    rateControl:
+      type: fixed-load
+      opts:
+        transactionLoad: 10
+    workload:
+      module: getEffectivePermission.js
+      arguments:
+        contractId: graph4
+        graphFile: &#x2F;data&#x2F;generated_graphs&#x2F;graph_1org_100s-0.1.json
+  - label: getEffectivePermission_2_1org_100s
+    description: &gt;-
+      Performance test for retrieving effective permissions under moderate load
+      (50 TPS).
+    txDuration: 10
+    rateControl:
+      type: fixed-load
+      opts:
+        transactionLoad: 50
+    workload:
+      module: getEffectivePermission.js
+      arguments:
+        contractId: graph4
+        graphFile: &#x2F;data&#x2F;generated_graphs&#x2F;graph_1org_100s-0.1.json
+  - label: getEffectivePermission_3_1org_100s
+    description: &gt;-
+      Performance test for retrieving effective permissions under higher load
+      (100 TPS).
+    txDuration: 10
+    rateControl:
+      type: fixed-load
+      opts:
+        transactionLoad: 100
+    workload:
+      module: getEffectivePermission.js
+      arguments:
+        contractId: graph4
+        graphFile: &#x2F;data&#x2F;generated_graphs&#x2F;graph_1org_100s-0.1.json
+</pre>
+                <h3>SUT</h3>
+                <pre id="sutdetails">not provided</pre>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
