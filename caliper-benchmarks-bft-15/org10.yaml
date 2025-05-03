@@ -504,7 +504,7 @@ certificateAuthorities:
         -----END CERTIFICATE-----
     url: https://10.87.23.33:30553
 channels:
-  demobftorg15ord15:
+  demobft15:
     orderers:
     - ord-bft-node1.fabric
     - ord-bft-node10.fabric
@@ -995,26 +995,26 @@ organizations:
         cert:
           pem: |
             -----BEGIN CERTIFICATE-----
-            MIICUjCCAfmgAwIBAgIUDHssh2ZnOwACT1xWJTF0HZMTKZAwCgYIKoZIzj0EAwIw
+            MIICUjCCAfmgAwIBAgIUD25WtJ/3kKNBcbBp+IwD+YjaowAwCgYIKoZIzj0EAwIw
             ajELMAkGA1UEBhMCRVMxETAPBgNVBAcTCEFsaWNhbnRlMREwDwYDVQQJEwhBbGlj
             YW50ZTEZMBcGA1UEChMQS3VuZyBGdSBTb2Z0d2FyZTENMAsGA1UECxMEVGVjaDEL
-            MAkGA1UEAxMCY2EwHhcNMjUwNDEwMTgwMTIyWhcNMjYwNDE3MjEyOTAwWjAgMQ4w
+            MAkGA1UEAxMCY2EwHhcNMjUwNDEwMTgwMTIyWhcNMjYwNDI4MTU1MTAwWjAgMQ4w
             DAYDVQQLEwVhZG1pbjEOMAwGA1UEAxMFYWRtaW4wWTATBgcqhkjOPQIBBggqhkjO
-            PQMBBwNCAASbKIBEkgBb7A3kDWcfJmxtXBJ7bBsmDxavSGtUc7uLDBG21FudVCPG
-            SIe/SGyGknGGSUvIw463zSZgmaZ827Ico4HGMIHDMA4GA1UdDwEB/wQEAwIHgDAM
-            BgNVHRMBAf8EAjAAMB0GA1UdDgQWBBTB8rAzDUrHlecynQ+6trYP7hJmJjArBgNV
+            PQMBBwNCAASbmosis5Y9QbisfzP+z4szTblbv2Cr9yItzbLt/mHEX2u++D+aX9d2
+            7rO25FzNO6YnG03JJPR7oZyhLgGL0HrWo4HGMIHDMA4GA1UdDwEB/wQEAwIHgDAM
+            BgNVHRMBAf8EAjAAMB0GA1UdDgQWBBSYnnl31UNypeGNO653SwkILzTqIzArBgNV
             HSMEJDAigCDjZ/HPargeMB2n4+oEfPlt8GNAwNa021xsZPjdDuv2bjBXBggqAwQF
             BgcIAQRLeyJhdHRycyI6eyJoZi5BZmZpbGlhdGlvbiI6IiIsImhmLkVucm9sbG1l
             bnRJRCI6ImFkbWluIiwiaGYuVHlwZSI6ImFkbWluIn19MAoGCCqGSM49BAMCA0cA
-            MEQCIA0b60Am/TCsRsKBpVjbQS3q4dj8NSDnFgGXMzlR/cKBAiAzdadHZyqAqZyw
-            0+Mfz7+0263h16QbaiXhl5Adi/SOeg==
+            MEQCIC4ZiSfv2kkUkOwyBLYUVL9mHdA3oYx+9VtRNErASn/0AiAas7PgxQZnT8xy
+            S8zpesc8vzIKLznTNBcWZDgT1bTCzg==
             -----END CERTIFICATE-----
         key:
           pem: |
             -----BEGIN PRIVATE KEY-----
-            MIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgAE7IN+q+3TpY35TI
-            HUX5j3tZr2kxXLBrC2AWIsTgXiuhRANCAASbKIBEkgBb7A3kDWcfJmxtXBJ7bBsm
-            DxavSGtUc7uLDBG21FudVCPGSIe/SGyGknGGSUvIw463zSZgmaZ827Ic
+            MIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgK2RIkcZGQTYgeMim
+            4hEdm4A3izYM7CZkOKcQ0hD4fIOhRANCAASbmosis5Y9QbisfzP+z4szTblbv2Cr
+            9yItzbLt/mHEX2u++D+aX9d27rO25FzNO6YnG03JJPR7oZyhLgGL0HrW
             -----END PRIVATE KEY-----
 peers:
   org10-peer0.fabric:

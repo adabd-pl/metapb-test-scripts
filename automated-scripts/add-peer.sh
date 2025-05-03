@@ -1,7 +1,7 @@
 
 # Parametry
 START_ORG=11  # Początkowy numer organizacji (np. org6-ca)
-END_ORG=20  # Końcowy numer organizacji (np. org10-ca)
+END_ORG=15  # Końcowy numer organizacji (np. org10-ca)
 NAMESPACE="fabric"  # Namespace
 ENROLL_ID="enroll"  # ID użytkownika do rejestracji
 ENROLL_SECRET="enrollpw"  # Hasło użytkownika do rejestracji

@@ -8,13 +8,13 @@
 #>
 
 # Konfiguracja
-$CHANNEL_NAME = "demobft10"  # Nazwa kanału
-$ORGS_COUNT = 10                  # Liczba organizacji
+$CHANNEL_NAME = "demobft5"  # Nazwa kanału
+$ORGS_COUNT = 5                  # Liczba organizacji
 $NAMESPACE = "fabric"             # Namespace
 $SOURCE_POD = "ubuntu-cli"        # Nazwa poda źródłowego
 $SOURCE_PATH = "."  # Ścieżka do plików orgX.yaml w podzie
-$OUTPUT_DIR = "..\..\caliper-benchmarks-bft-10"  # Katalog wyjściowy
-$CONTRACT = "graph5o10"
+$OUTPUT_DIR = "..\..\caliper-benchmarks-bft-5"  # Katalog wyjściowy
+$CONTRACT = "graph5o5"
 # Utwórz katalog wyjściowy
 New-Item -ItemType Directory -Path $OUTPUT_DIR -Force | Out-Null
 

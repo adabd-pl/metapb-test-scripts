@@ -14,32 +14,32 @@ test:
     #    workload:
     #      module: addVertices-org.js
     #      arguments:
-    #        contractId: graph5o20
+    #        contractId: graph5o15
     #        graphFile: '/data/generated_graphs/graph_1org_400s-0.1.json'
-     - label: updatePermissions_30_50
-       description: "Warm-up phase to stabilize system performance before main tests."
-       txDuration: 30
-       rateControl:
-         type: fixed-load
-         opts:
-           transactionLoad: 50
-       workload:
-         module: updatePermissions.js
-         arguments:
-           contractId: graph5o20
-           graphFile: '/data/generated_graphs/graph_1org_400s-0.1.json'
-     - label: updatePermissions_30_100
-       description: "Warm-up phase to stabilize system performance before main tests."
-       txDuration: 30
-       rateControl:
-         type: fixed-load
-         opts:
-           transactionLoad: 100
-       workload:
-         module: updatePermissions.js
-         arguments:
-           contractId: graph5o20
-           graphFile: '/data/generated_graphs/graph_1org_400s-0.1.json'
+    #  - label: updatePermissions_30_50
+    #    description: "Warm-up phase to stabilize system performance before main tests."
+    #    txDuration: 30
+    #    rateControl:
+    #      type: fixed-load
+    #      opts:
+    #        transactionLoad: 50
+    #    workload:
+    #      module: updatePermissions.js
+    #      arguments:
+    #        contractId: graph5o15
+    #        graphFile: '/data/generated_graphs/graph_1org_400s-0.1.json'
+    #  - label: updatePermissions_30_100
+    #    description: "Warm-up phase to stabilize system performance before main tests."
+    #    txDuration: 30
+    #    rateControl:
+    #      type: fixed-load
+    #      opts:
+    #        transactionLoad: 100
+    #    workload:
+    #      module: updatePermissions.js
+    #      arguments:
+    #        contractId: graph5o15
+    #        graphFile: '/data/generated_graphs/graph_1org_400s-0.1.json'
      - label: updatePermissions_30_150
        description: "Warm-up phase to stabilize system performance before main tests."
        txDuration: 30
@@ -50,7 +50,7 @@ test:
        workload:
          module: updatePermissions.js
          arguments:
-           contractId: graph5o20
+           contractId: graph5o15
            graphFile: '/data/generated_graphs/graph_1org_400s-0.1.json'
      - label: updatePermissions_30_200
        description: "Warm-up phase to stabilize system performance before main tests."
@@ -62,7 +62,7 @@ test:
        workload:
          module: updatePermissions.js
          arguments:
-           contractId: graph5o20
+           contractId: graph5o15
            graphFile: '/data/generated_graphs/graph_1org_400s-0.1.json'
      - label: getEffectivePermission_30_200
        description: "Warm-up phase to stabilize system performance before main tests."
@@ -74,7 +74,7 @@ test:
        workload:
          module: getEffectivePermission.js
          arguments:
-           contractId: graph5o20
+           contractId: graph5o15
            graphFile: '/data/generated_graphs/graph_1org_400s-0.1.json'
      - label: getEffectivePermission_30_400
        description: "Warm-up phase to stabilize system performance before main tests."
@@ -86,7 +86,31 @@ test:
        workload:
          module: getEffectivePermission.js
          arguments:
-           contractId: graph5o20
+           contractId: graph5o15
+           graphFile: '/data/generated_graphs/graph_1org_400s-0.1.json'
+     - label: getEffectivePermission_180_200
+       description: "Warm-up phase to stabilize system performance before main tests."
+       txDuration: 180
+       rateControl:
+         type: fixed-load
+         opts:
+           transactionLoad: 200
+       workload:
+         module: getEffectivePermission.js
+         arguments:
+           contractId: graph5o15
+           graphFile: '/data/generated_graphs/graph_1org_400s-0.1.json'
+     - label: getEffectivePermission_180_400
+       description: "Warm-up phase to stabilize system performance before main tests."
+       txDuration: 180
+       rateControl:
+         type: fixed-load
+         opts:
+           transactionLoad: 400
+       workload:
+         module: getEffectivePermission.js
+         arguments:
+           contractId: graph5o15
            graphFile: '/data/generated_graphs/graph_1org_400s-0.1.json'
 #      - label: updatePermissions_stable
 #        description: "Testing updatePermissions at moderate load (10 TPS) with a start delay to ensure zero failures."
@@ -99,7 +123,7 @@ test:
 #        workload:
 #          module: updatePermissions.js
 #          arguments:
-#            contractId: graph5o20
+#            contractId: graph5o15
 #            graphFile: '/data/generated_graphs/graph_1org_test.json'
 
 #      - label: updatePermissions_heavy
@@ -113,7 +137,7 @@ test:
 #        workload:
 #          module: updatePermissions.js
 #          arguments:
-#            contractId: graph5o20
+#            contractId: graph5o15
 #            graphFile: '/data/generated_graphs/graph_1org_test.json'
 
 #      - label: getEffectivePermission_1
@@ -126,7 +150,7 @@ test:
 #        workload:
 #          module: getEffectivePermission.js
 #          arguments:
-#            contractId: graph5o20
+#            contractId: graph5o15
 #            graphFile: '/data/generated_graphs/graph_1org_test.json'
 
 #      - label: getEffectivePermission_2
@@ -139,7 +163,7 @@ test:
 #        workload:
 #          module: getEffectivePermission.js
 #          arguments:
-#            contractId: graph5o20
+#            contractId: graph5o15
 #            graphFile: '/data/generated_graphs/graph_1org_test.json'
           
 #      - label: getEffectivePermission_3
@@ -152,7 +176,7 @@ test:
 #        workload:
 #          module: getEffectivePermission.js
 #          arguments:
-#            contractId: graph5o20
+#            contractId: graph5o15
 #            graphFile: '/data/generated_graphs/graph_1org_test.json'
 # #graph_1org_100s-0.1.json
 #      - label: updatePermissions_light_1org_100s
@@ -166,7 +190,7 @@ test:
 #        workload:
 #          module: updatePermissions.js
 #          arguments:
-#            contractId: graph5o20
+#            contractId: graph5o15
 #            graphFile: '/data/generated_graphs/graph_1org_100s-0.1.json'
 
 #      - label: updatePermissions_stable_1org_100s
@@ -180,7 +204,7 @@ test:
 #        workload:
 #          module: updatePermissions.js
 #          arguments:
-#            contractId: graph5o20
+#            contractId: graph5o15
 #            graphFile: '/data/generated_graphs/graph_1org_100s-0.1.json'
 
 #      - label: updatePermissions_heavy_1org_100s
@@ -194,7 +218,7 @@ test:
 #        workload:
 #          module: updatePermissions.js
 #          arguments:
-#            contractId: graph5o20
+#            contractId: graph5o15
 #            graphFile: '/data/generated_graphs/graph_1org_100s-0.1.json'
 
 #      - label: getEffectivePermission_1_1org_100s
@@ -207,7 +231,7 @@ test:
 #        workload:
 #          module: getEffectivePermission.js
 #          arguments:
-#            contractId: graph5o20
+#            contractId: graph5o15
 #            graphFile: '/data/generated_graphs/graph_1org_100s-0.1.json'
 
 #      - label: getEffectivePermission_2_1org_100s
@@ -220,7 +244,7 @@ test:
 #        workload:
 #          module: getEffectivePermission.js
 #          arguments:
-#            contractId: graph5o20
+#            contractId: graph5o15
 #            graphFile: '/data/generated_graphs/graph_1org_100s-0.1.json'
           
 #      - label: getEffectivePermission_3_1org_100s
@@ -233,7 +257,7 @@ test:
 #        workload:
 #         module: getEffectivePermission.js
 #         arguments:
-#            contractId: graph5o20
+#            contractId: graph5o15
 #            graphFile: '/data/generated_graphs/graph_1org_100s-0.1.json'
 # # graph_1org_200s-0.2.json
 #      - label: updatePermissions_light_1org_200s
@@ -247,7 +271,7 @@ test:
 #        workload:
 #          module: updatePermissions.js
 #          arguments:
-#            contractId: graph5o20
+#            contractId: graph5o15
 #            graphFile: '/data/generated_graphs/graph_1org_200s-0.2.json'
  
 #      - label: updatePermissions_stable_1org_200s
@@ -261,7 +285,7 @@ test:
 #        workload:
 #          module: updatePermissions.js
 #          arguments:
-#            contractId: graph5o20
+#            contractId: graph5o15
 #            graphFile: '/data/generated_graphs/graph_1org_200s-0.2.json'
 
 #      - label: updatePermissions_heavy_1org_100s
@@ -275,7 +299,7 @@ test:
 #        workload:
 #          module: updatePermissions.js
 #          arguments:
-#            contractId: graph5o20
+#            contractId: graph5o15
 #            graphFile: '/data/generated_graphs/graph_1org_200s-0.2.json'
 
 #      - label: getEffectivePermission_1_1org_200s
@@ -288,7 +312,7 @@ test:
 #        workload:
 #          module: getEffectivePermission.js
 #          arguments:
-#            contractId: graph5o20
+#            contractId: graph5o15
 #            graphFile: '/data/generated_graphs/graph_1org_200s-0.2.json'
 
 #      - label: getEffectivePermission_2_1org_200s
@@ -301,7 +325,7 @@ test:
 #        workload:
 #          module: getEffectivePermission.js
 #          arguments:
-#            contractId: graph5o20
+#            contractId: graph5o15
 #            graphFile: '/data/generated_graphs/graph_1org_200s-0.2.json'
           
 #      - label: getEffectivePermission_3_1org_200s
@@ -314,5 +338,5 @@ test:
 #        workload:
 #          module: getEffectivePermission.js
 #          arguments:
-#            contractId: graph5o20
+#            contractId: graph5o15
 #            graphFile: '/data/generated_graphs/graph_1org_200s-0.2.json'

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Parametry
-ORG_COUNT=10
+ORG_COUNT=1
 CHANNEL_NAME="demobft${ORG_COUNT}"  # Nazwa kanału (np. demobft)
 NAMESPACE="fabric"
 ORDERER_BASE_NAME="ord-bft-node"

@@ -5,9 +5,9 @@ caliper:
   blockchain: fabric
 
 channels:
-  - channelName: demobftorg5ord5
+  - channelName: demobft5
     contracts:
-    - id: graph5
+    - id: graph5o5
 
 organizations:
   - mspid: Org1MSP

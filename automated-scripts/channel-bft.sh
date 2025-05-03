@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Parametry
-ORDERER_COUNT=10    # Liczba ordererów
-ORG_COUNT=10         # Liczba organizacji
+ORDERER_COUNT=1    # Liczba ordererów
+ORG_COUNT=1         # Liczba organizacji
 CHANNEL_NAME="demobft${ORG_COUNT}"
 NAMESPACE="fabric"
 ORDERER_BASE_NAME="ord-bft-node"
